@@ -33,9 +33,12 @@ export default function Home() {
           <p className="font-mono text-xs text-teal-500 tracking-widest mb-6 uppercase">
             Undergraduate Researcher
           </p>
-          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-2 leading-tight">
             Haotian Yang
           </h1>
+          <p className="font-mono text-sm text-teal-400 mb-6">
+            (Sora)
+          </p>
           <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
             BEMACS student at{' '}
             <span className="text-white">Bocconi University</span>.

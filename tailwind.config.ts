@@ -16,8 +16,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        display: ['var(--font-space-grotesk)'],
+        sans: ['var(--font-lora)'],
+        display: ['var(--font-lora)'],
+        ui: ['var(--font-inter)'],
         mono: ['var(--font-jetbrains-mono)'],
       },
       backgroundColor: {

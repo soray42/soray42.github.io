@@ -1,4 +1,4 @@
-import { Github, Linkedin, MapPin } from 'lucide-react';
+import { Github, Linkedin, MapPin, Mail } from 'lucide-react';
 import MathRain from '@/components/MathRain';
 
 export default function ContactPage() {
@@ -35,6 +35,28 @@ export default function ContactPage() {
             <div>
               <p className="text-white text-sm font-medium">LinkedIn</p>
               <p className="text-gray-600 text-xs">Haotian Yang</p>
+            </div>
+          </a>
+
+          <a
+            href="mailto:sorayoung.42@outlook.com"
+            className="group flex items-center gap-3 p-4 border border-white/8 rounded-lg bg-black/30 hover:border-white/20 hover:bg-black/50 transition-all duration-200"
+          >
+            <Mail className="w-5 h-5 text-gray-500 group-hover:text-teal-400 transition-colors" />
+            <div>
+              <p className="text-white text-sm font-medium">Email (Personal)</p>
+              <p className="text-gray-600 text-xs">sorayoung.42@outlook.com</p>
+            </div>
+          </a>
+
+          <a
+            href="mailto:haotian.yang@studbocconi.it"
+            className="group flex items-center gap-3 p-4 border border-white/8 rounded-lg bg-black/30 hover:border-white/20 hover:bg-black/50 transition-all duration-200"
+          >
+            <Mail className="w-5 h-5 text-gray-500 group-hover:text-teal-400 transition-colors" />
+            <div>
+              <p className="text-white text-sm font-medium">Email (Academic)</p>
+              <p className="text-gray-600 text-xs">haotian.yang@studbocconi.it</p>
             </div>
           </a>
 

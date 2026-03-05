@@ -24,13 +24,6 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-white/8">
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex items-center justify-between h-14">
-          <Link
-            href="/"
-            className="font-mono text-sm font-semibold text-teal-400 hover:text-teal-300 transition-colors tracking-widest"
-          >
-            HY
-          </Link>
-
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
