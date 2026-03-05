@@ -61,26 +61,31 @@ export default function Home() {
     <div className="min-h-screen bg-[#0A0A0A]">
       <MathRain />
 
-      {/* Hero Section: Name + Photo (two-column) */}
-      <section className="relative z-10 min-h-[85vh] flex items-center max-w-5xl mx-auto px-6 pt-20">
-        <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center">
-          {/* Left side */}
+      {/* ── HERO: Inverted-L layout ───────────────────────────────────────
+          Top row: name (left, compact) + photo (right, large)
+          Below left: bio text fills the space under the name
+      ──────────────────────────────────────────────────────────────────── */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-8 md:gap-12">
+
+          {/* LEFT COLUMN */}
           <div>
-            <p className="font-mono text-xs text-teal-500 tracking-widest mb-4 uppercase">
+            {/* Name block — compact, upper-left */}
+            <p className="font-mono text-xs text-teal-500 tracking-widest mb-3 uppercase">
               Undergraduate Researcher
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-1 leading-tight">
               Haotian Yang
             </h1>
-            <p className="font-mono text-sm text-teal-400 mb-8">
+            <p className="font-mono text-sm text-teal-400 mb-6">
               preferred: Sora
             </p>
-            
+
             {/* Buttons */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-10">
               <Link
-                href="/research"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500 text-black text-sm font-semibold rounded hover:bg-teal-400 transition-colors"
+                href="/research/"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-black text-sm font-semibold rounded hover:bg-teal-400 transition-colors"
               >
                 Research
                 <ArrowRight className="w-4 h-4" />
@@ -89,51 +94,49 @@ export default function Home() {
                 href="https://www.linkedin.com/in/haotian-yang-b7a47b301/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 border border-white/20 text-gray-300 text-sm font-medium rounded hover:border-white/40 hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-gray-300 text-sm font-medium rounded hover:border-white/40 hover:text-white transition-colors"
               >
                 LinkedIn
                 <ExternalLink className="w-3.5 h-3.5" />
               </Link>
             </div>
+
+            {/* Bio — sits in the bottom-left of the inverted-L */}
+            <div className="space-y-4 text-[15px] leading-relaxed text-gray-400 max-w-xl">
+              <p>
+                Born in Harbin, China. Currently based in Milan — boring, but Bocconi&apos;s here and so is the work.
+              </p>
+              <p>
+                First-year undergraduate studying Economics Management and Computer Science (BEMACS) at Bocconi University. My research so far has focused on the statistical limits of financial network recovery: when T/N is small, even the best estimators fail, and T/N dominates almost everything else you might try.
+              </p>
+              <p>
+                Broadly interested in complex systems, network science, financial econometrics, and the math that connects them. Open to research internships in any of these areas, and aiming for a PhD in statistics or financial mathematics down the line.
+              </p>
+            </div>
           </div>
 
-          {/* Right side: Profile photo */}
-          <div className="flex justify-center md:justify-end">
+          {/* RIGHT COLUMN — large photo, aligned to top */}
+          <div className="flex justify-center md:justify-end md:pt-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://media.licdn.com/dms/image/v2/D4E03AQF5Y3mMl2XZBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1733055428609?e=1748476800&v=beta&t=a3cXJEr1oiE1NkJCXaqiOBNwNFAj6NG35xH-0IkPl9s"
               alt="Haotian Yang"
-              className="w-48 h-48 rounded-full object-cover border-2 border-teal-500/40"
+              className="w-56 h-56 md:w-64 md:h-64 rounded-2xl object-cover border border-white/10"
             />
           </div>
         </div>
       </section>
 
-      {/* Bio paragraphs (full width, below hero) */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-12">
-        <div className="max-w-2xl space-y-4 text-base leading-relaxed text-gray-300">
-          <p>
-            Born in Harbin, China. Currently based in Milan — boring, but Bocconi&apos;s here and so is the work.
-          </p>
-          <p>
-            First-year undergraduate studying Economics Management and Computer Science (BEMACS) at Bocconi University. My research so far has focused on the statistical limits of financial network recovery: when T/N is small, even the best estimators fail, and T/N dominates almost everything else you might try.
-          </p>
-          <p>
-            Broadly interested in complex systems, network science, financial econometrics, and the math that connects them. Open to research internships in any of these areas, and aiming for a PhD in statistics or financial mathematics down the line.
-          </p>
-        </div>
-      </section>
-
-      {/* Research Interests (tags) */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-12">
-        <h3 className="font-mono text-xs text-teal-500 tracking-widest mb-4 uppercase">
+      {/* ── RESEARCH INTERESTS ─────────────────────────────────────────── */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-10">
+        <p className="font-mono text-xs text-teal-500 tracking-widest mb-3 uppercase">
           Research Interests
-        </h3>
+        </p>
         <div className="flex flex-wrap gap-2">
           {researchInterests.map((interest) => (
             <span
               key={interest}
-              className="px-3 py-1.5 text-sm text-teal-400 bg-teal-500/10 border border-teal-500/30 rounded"
+              className="px-3 py-1 text-sm text-teal-400 bg-teal-500/8 border border-teal-500/25 rounded"
             >
               {interest}
             </span>
@@ -141,44 +144,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Open to Collaboration callout */}
+      {/* ── OPEN TO COLLABORATION ──────────────────────────────────────── */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pb-16">
-        <div className="border border-teal-500/30 bg-teal-500/5 rounded-lg p-5 max-w-2xl">
-          <p className="text-gray-300 text-base leading-relaxed">
-            <strong className="text-white">Open to collaboration.</strong> If you&apos;re working on something at the intersection of networks, statistics, and finance — feel free to reach out.
+        <div className="border border-teal-500/25 bg-teal-500/5 rounded-lg p-5 max-w-2xl">
+          <p className="text-gray-300 text-[15px] leading-relaxed">
+            <strong className="text-white">Open to collaboration.</strong>{' '}
+            Working on something at the intersection of networks, statistics, and finance?
+            Especially interested in connecting with people working on financial network estimation,
+            prediction market microstructure, or market-making theory — feel free to reach out.
           </p>
         </div>
       </section>
 
-      {/* Papers Section */}
+      {/* ── PAPERS ─────────────────────────────────────────────────────── */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pb-16">
         <h2 className="font-display text-2xl font-bold text-white mb-6">Papers</h2>
-
-        <div className="space-y-6">
+        <div className="space-y-4">
           {papers.map((paper, idx) => (
             <button
               key={idx}
               onClick={() => togglePaper(idx)}
-              className="w-full text-left p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-white/16 transition-all duration-200"
+              className="w-full text-left p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-teal-500/30 transition-all duration-200"
             >
-              {/* EcoSta 2026 Badge */}
               <div className="mb-3">
                 <span className="text-teal-400 bg-teal-500/10 border border-teal-500/30 text-xs px-2 py-0.5 rounded">
                   {paper.badge}
                 </span>
               </div>
-
-              <h3 className="text-white font-semibold text-lg leading-snug mb-2">
+              <h3 className="text-white font-semibold text-base leading-snug mb-2">
                 {paper.title}
               </h3>
-              
               <p className="text-sm text-gray-400 mb-1">
                 {paper.authors.map((author, i) => (
                   <span key={i}>
                     {author.url ? (
-                      <a 
-                        href={author.url} 
-                        target="_blank" 
+                      <a
+                        href={author.url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-teal-400 hover:text-teal-300 transition-colors"
                         onClick={(e) => e.stopPropagation()}
@@ -188,58 +190,49 @@ export default function Home() {
                     ) : (
                       <span>{author.name}</span>
                     )}
-                    {i < paper.authors.length - 1 && ", "}
+                    {i < paper.authors.length - 1 && ', '}
                   </span>
                 ))}
               </p>
-              
-              <p className="text-xs text-gray-500 mb-4">{paper.venue}</p>
-
-              <div className="inline-flex items-center gap-2 text-sm font-medium text-teal-400">
+              <p className="text-xs text-gray-500 mb-3">{paper.venue}</p>
+              <div className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-400">
                 {expandedPaper === idx ? (
-                  <>
-                    Collapse <ChevronUp className="w-4 h-4" />
-                  </>
+                  <><ChevronUp className="w-4 h-4" /> Collapse</>
                 ) : (
-                  <>
-                    Read more <ChevronDown className="w-4 h-4" />
-                  </>
+                  <><ChevronDown className="w-4 h-4" /> Read more</>
                 )}
               </div>
 
               {expandedPaper === idx && (
-                <div className="mt-6 pt-6 border-t border-white/8 space-y-4" onClick={(e) => e.stopPropagation()}>
+                <div
+                  className="mt-5 pt-5 border-t border-white/8 space-y-4"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <div>
                     <h4 className="text-white font-medium text-sm mb-2">Abstract</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {paper.abstract}
-                    </p>
+                    <p className="text-gray-400 text-sm leading-relaxed">{paper.abstract}</p>
                   </div>
-
                   <div>
                     <h4 className="text-white font-medium text-sm mb-2">Key Findings</h4>
                     <ul className="space-y-1.5">
-                      {paper.keyFindings.map((finding, i) => (
-                        <li key={i} className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                          <span className="text-teal-500 mt-1">•</span>
-                          <span>{finding}</span>
+                      {paper.keyFindings.map((f, i) => (
+                        <li key={i} className="text-gray-400 text-sm flex gap-2">
+                          <span className="text-teal-500 shrink-0">•</span>
+                          <span>{f}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
-
                   {paper.ssrnLink && (
-                    <div className="pt-2">
-                      <a
-                        href={paper.ssrnLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-teal-500 text-black rounded hover:bg-teal-400 transition-colors"
-                      >
-                        View on SSRN
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
+                    <a
+                      href={paper.ssrnLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-teal-500 text-black rounded hover:bg-teal-400 transition-colors"
+                    >
+                      View on SSRN
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
                   )}
                 </div>
               )}
@@ -248,14 +241,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Outside Research (larger, prominent) */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-24">
-        <h2 className="font-display text-2xl font-bold text-white mb-6">Outside Research</h2>
-        <div className="max-w-2xl">
-          <p className="text-gray-400 text-base leading-relaxed">
-            When not doing research: craft beer, poker, hardcore punk and metalcore (current obsession: Fear and Loathing in Las Vegas), J-rock, and Japan — visits often, possibly moving to Tokyo.
-          </p>
-        </div>
+      {/* ── OUTSIDE RESEARCH ───────────────────────────────────────────── */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-28">
+        <h2 className="font-display text-2xl font-bold text-white mb-4">Outside Research</h2>
+        <p className="text-gray-400 text-base leading-relaxed max-w-2xl">
+          When not doing research: craft beer, poker, hardcore punk and metalcore
+          (current obsession: Fear and Loathing in Las Vegas), J-rock, and Japan —
+          visits often, possibly moving to Tokyo.
+        </p>
       </section>
     </div>
   );

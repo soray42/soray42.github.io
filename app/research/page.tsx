@@ -56,21 +56,19 @@ export default function ResearchPage() {
         {/* Ongoing Research Section */}
         <section className="mb-16">
           <h2 className="font-display text-2xl font-bold text-white mb-6">Ongoing Research</h2>
-          <div className="p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm">
-            <ul className="space-y-2.5">
-              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                <span className="text-teal-500 mt-1">•</span>
-                <span>Financial network recovery under high-dimensional VAR: sample complexity, minimax rates, practical estimation</span>
-              </li>
-              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                <span className="text-teal-500 mt-1">•</span>
-                <span>Information-theoretic limits of Granger/transfer entropy graph recovery</span>
-              </li>
-              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                <span className="text-teal-500 mt-1">•</span>
-                <span>Exploring applications to systemic risk and complex financial systems</span>
-              </li>
-            </ul>
+          <div className="space-y-4">
+            <div className="p-5 rounded-lg border border-white/8 bg-black/30">
+              <p className="text-white text-sm font-medium mb-2">SpringRank Mismatch Signal</p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Testing whether divergence between TE-derived information hierarchy (SpringRank) and market capitalization ranking predicts ETF returns — first application of SpringRank to financial networks.
+              </p>
+            </div>
+            <div className="p-5 rounded-lg border border-white/8 bg-black/30">
+              <p className="text-white text-sm font-medium mb-2">Directed Information Networks in Prediction Markets</p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Estimating Transfer Entropy networks across prediction market contracts (Polymarket/Kalshi) to recover market-implied macro belief transmission graphs; applying network structure to cross-contract hedging in an extended Avellaneda–Stoikov framework and extracting macro regime signals from time-varying network topology. Bridges financial network estimation, prediction market microstructure, and optimal market-making literatures.
+              </p>
+            </div>
           </div>
         </section>
 
