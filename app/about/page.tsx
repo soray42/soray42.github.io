@@ -9,22 +9,22 @@ export default function AboutPage() {
 
         <div className="space-y-6 text-gray-400 text-sm leading-relaxed">
           <p>
-            I'm <span className="text-white font-medium">Haotian Yang</span>, a first-year undergraduate 
+            I&apos;m <span className="text-white font-medium">Haotian Yang</span>, a first-year undergraduate
             at Bocconi University studying Economics Management and Computer Science (BEMACS).
           </p>
           <p>
-            My research so far has focused on the statistical limits of financial network recovery — 
-            specifically, when high-dimensional time series pipelines can and cannot reliably 
-            recover the graph structure we care about. The short answer is that the T/N ratio 
+            My research so far has focused on the statistical limits of financial network recovery —
+            specifically, when high-dimensional time series pipelines can and cannot reliably
+            recover the graph structure we care about. The short answer is that the T/N ratio
             dominates almost everything else.
           </p>
           <p>
-            I'm interested in econometric methodology, information theory, and the interface between 
-            statistics and finance. Currently looking for research opportunities and ways to push 
+            I&apos;m interested in econometric methodology, information theory, and the interface between
+            statistics and finance. Currently looking for research opportunities and ways to push
             the work further.
           </p>
           <p>
-            When I'm not in the data: reading, music, and trying to understand why things work 
+            When I&apos;m not in the data: reading, music, and trying to understand why things work
             the way they do.
           </p>
         </div>
