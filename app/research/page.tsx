@@ -12,6 +12,7 @@ const papers = [
       { name: "Yifeng Li", url: "https://yifen9.li/" }
     ],
     venue: "SSRN Working Paper, 2026",
+    badge: "🎤 EcoSta 2026 · Oral",
     abstract: "We conduct a matched data-generating process (DGP) audit to evaluate whether estimated transfer entropy networks reliably recover meaningful node-level structure in financial systems. Using simulated data with known ground truth across a range of T/N ratios, we assess precision, recall, and F1 of node-level metrics under VAR+Gaussian, VAR+GARCH, and VAR+GARCH+Factor DGPs with OLS, Raw LASSO, and Factor-Neutral LASSO estimators. Our central finding is that the T/N ratio dominates preprocessing choice: at realistic T/N ratios (T/N < 5), OLS node-level precision reaches only 11%, Raw LASSO achieves 72.3%, and Factor-Neutral LASSO shows no significant improvement (66.7%). These results have direct implications for applied researchers building financial networks from returns data.",
     keyFindings: [
       "T/N ratio is the dominant determinant of network recovery quality",
@@ -28,6 +29,7 @@ const papers = [
       { name: "YANG Haotian", url: null }
     ],
     venue: "Working Paper, 2026",
+    badge: "🎤 EcoSta 2026 · Oral",
     abstract: "We study when directed dependence networks based on linear Granger causality (and hence Gaussian transfer entropy) can be reliably recovered in high dimensions. We derive information-theoretic lower bounds showing that node-level recovery is impossible below a sample-size regime determined by sparsity, signal strength, and dimension. We also provide achievability guarantees for row-wise sparse VAR estimation via penalized regression. Our results yield practical sample-size planning rules and clarify why empirically popular network pipelines fail at realistic T/N ratios.",
     keyFindings: [
       "Information-theoretic lower bounds on the minimum T/N for reliable graph recovery",
@@ -82,6 +84,13 @@ export default function ResearchPage() {
                 onClick={() => togglePaper(idx)}
                 className="w-full text-left p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-white/16 transition-all duration-200"
               >
+                {/* EcoSta 2026 Badge */}
+                <div className="mb-3">
+                  <span className="text-teal-400 bg-teal-500/10 border border-teal-500/30 text-xs px-2 py-0.5 rounded">
+                    {paper.badge}
+                  </span>
+                </div>
+
                 <h3 className="text-white font-semibold text-lg leading-snug mb-2">
                   {paper.title}
                 </h3>

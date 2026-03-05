@@ -6,11 +6,11 @@ import { ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import MathRain from '@/components/MathRain';
 
 const researchInterests = [
-  'Financial Networks',
-  'Transfer Entropy',
-  'High-Dim Time Series',
-  'Information Theory',
-  'Complex Systems',
+  'Financial networks & transfer entropy',
+  'High-dimensional time series',
+  'Information-theoretic limits',
+  'Complex systems & network science',
+  'Quantitative finance / HF',
 ];
 
 const papers = [
@@ -21,6 +21,7 @@ const papers = [
       { name: "Yifeng Li", url: "https://yifen9.li/" }
     ],
     venue: "SSRN Working Paper, 2026",
+    badge: "🎤 EcoSta 2026 · Oral",
     abstract: "We conduct a matched data-generating process (DGP) audit to evaluate whether estimated transfer entropy networks reliably recover meaningful node-level structure in financial systems. Using simulated data with known ground truth across a range of T/N ratios, we assess precision, recall, and F1 of node-level metrics under VAR+Gaussian, VAR+GARCH, and VAR+GARCH+Factor DGPs with OLS, Raw LASSO, and Factor-Neutral LASSO estimators. Our central finding is that the T/N ratio dominates preprocessing choice: at realistic T/N ratios (T/N < 5), OLS node-level precision reaches only 11%, Raw LASSO achieves 72.3%, and Factor-Neutral LASSO shows no significant improvement (66.7%). These results have direct implications for applied researchers building financial networks from returns data.",
     keyFindings: [
       "T/N ratio is the dominant determinant of network recovery quality",
@@ -37,6 +38,7 @@ const papers = [
       { name: "YANG Haotian", url: null }
     ],
     venue: "Working Paper, 2026",
+    badge: "🎤 EcoSta 2026 · Oral",
     abstract: "We study when directed dependence networks based on linear Granger causality (and hence Gaussian transfer entropy) can be reliably recovered in high dimensions. We derive information-theoretic lower bounds showing that node-level recovery is impossible below a sample-size regime determined by sparsity, signal strength, and dimension. We also provide achievability guarantees for row-wise sparse VAR estimation via penalized regression. Our results yield practical sample-size planning rules and clarify why empirically popular network pipelines fail at realistic T/N ratios.",
     keyFindings: [
       "Information-theoretic lower bounds on the minimum T/N for reliable graph recovery",
@@ -59,38 +61,21 @@ export default function Home() {
     <div className="min-h-screen bg-[#0A0A0A]">
       <MathRain />
 
-      {/* Hero Section */}
-      <section className="relative z-10 min-h-[90vh] flex items-center max-w-5xl mx-auto px-6 pt-14">
-        <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-center">
-          {/* Left: Text */}
+      {/* Hero Section: Name + Photo (two-column) */}
+      <section className="relative z-10 min-h-[85vh] flex items-center max-w-5xl mx-auto px-6 pt-20">
+        <div className="w-full grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center">
+          {/* Left side */}
           <div>
-            <p className="font-mono text-xs text-teal-500 tracking-widest mb-6 uppercase">
+            <p className="font-mono text-xs text-teal-500 tracking-widest mb-4 uppercase">
               Undergraduate Researcher
             </p>
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-2 leading-tight">
+            <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-3 leading-tight">
               Haotian Yang
             </h1>
-            <p className="font-mono text-sm text-teal-400 mb-6">
+            <p className="font-mono text-sm text-teal-400 mb-8">
               preferred: Sora
             </p>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xl">
-              Born in Harbin, China. Based in Milan for Bocconi. First-year BEMACS student. 
-              I study when financial networks can — and cannot — be reliably recovered from data. 
-              T/N ratio dominates almost everything.
-            </p>
             
-            {/* Research Interest Tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              {researchInterests.map((interest) => (
-                <span
-                  key={interest}
-                  className="px-3 py-1.5 text-xs font-medium text-teal-400 bg-teal-500/10 border border-teal-500/30 rounded"
-                >
-                  {interest}
-                </span>
-              ))}
-            </div>
-
             {/* Buttons */}
             <div className="flex flex-wrap gap-3">
               <Link
@@ -112,15 +97,56 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right: Photo */}
+          {/* Right side: Profile photo */}
           <div className="flex justify-center md:justify-end">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://media.licdn.com/dms/image/v2/D4E03AQF5Y3mMl2XZBA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1733055428609?e=1748476800&v=beta&t=a3cXJEr1oiE1NkJCXaqiOBNwNFAj6NG35xH-0IkPl9s"
               alt="Haotian Yang"
-              className="w-[180px] h-[180px] rounded-full object-cover border-4 border-teal-500/30"
+              className="w-48 h-48 rounded-full object-cover border-2 border-teal-500/40"
             />
           </div>
+        </div>
+      </section>
+
+      {/* Bio paragraphs (full width, below hero) */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-12">
+        <div className="max-w-2xl space-y-4 text-base leading-relaxed text-gray-300">
+          <p>
+            Born in Harbin, China. Currently based in Milan — boring, but Bocconi&apos;s here and so is the work.
+          </p>
+          <p>
+            First-year undergraduate studying Economics Management and Computer Science (BEMACS) at Bocconi University. My research so far has focused on the statistical limits of financial network recovery: when T/N is small, even the best estimators fail, and T/N dominates almost everything else you might try.
+          </p>
+          <p>
+            Broadly interested in complex systems, network science, financial econometrics, and the math that connects them. Open to research internships in any of these areas, and aiming for a PhD in statistics or financial mathematics down the line.
+          </p>
+        </div>
+      </section>
+
+      {/* Research Interests (tags) */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-12">
+        <h3 className="font-mono text-xs text-teal-500 tracking-widest mb-4 uppercase">
+          Research Interests
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {researchInterests.map((interest) => (
+            <span
+              key={interest}
+              className="px-3 py-1.5 text-sm text-teal-400 bg-teal-500/10 border border-teal-500/30 rounded"
+            >
+              {interest}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      {/* Open to Collaboration callout */}
+      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-16">
+        <div className="border border-teal-500/30 bg-teal-500/5 rounded-lg p-5 max-w-2xl">
+          <p className="text-gray-300 text-base leading-relaxed">
+            <strong className="text-white">Open to collaboration.</strong> If you&apos;re working on something at the intersection of networks, statistics, and finance — feel free to reach out.
+          </p>
         </div>
       </section>
 
@@ -135,6 +161,13 @@ export default function Home() {
               onClick={() => togglePaper(idx)}
               className="w-full text-left p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-white/16 transition-all duration-200"
             >
+              {/* EcoSta 2026 Badge */}
+              <div className="mb-3">
+                <span className="text-teal-400 bg-teal-500/10 border border-teal-500/30 text-xs px-2 py-0.5 rounded">
+                  {paper.badge}
+                </span>
+              </div>
+
               <h3 className="text-white font-semibold text-lg leading-snug mb-2">
                 {paper.title}
               </h3>
@@ -215,36 +248,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ongoing Research + Collaboration */}
+      {/* Outside Research (larger, prominent) */}
       <section className="relative z-10 max-w-5xl mx-auto px-6 pb-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Ongoing Research */}
-          <div className="p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm">
-            <h3 className="font-display text-xl font-semibold text-white mb-4">Ongoing Research</h3>
-            <ul className="space-y-2">
-              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                <span className="text-teal-500 mt-1">•</span>
-                <span>Financial network recovery under high-dimensional VAR: sample complexity, minimax rates, practical estimation</span>
-              </li>
-              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                <span className="text-teal-500 mt-1">•</span>
-                <span>Information-theoretic limits of Granger/transfer entropy graph recovery</span>
-              </li>
-              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                <span className="text-teal-500 mt-1">•</span>
-                <span>Exploring applications to systemic risk and complex financial systems</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Open for Collaboration */}
-          <div className="p-6 rounded-lg border border-teal-500/30 bg-teal-500/5 backdrop-blur-sm">
-            <h3 className="font-display text-xl font-semibold text-white mb-4">Open for Collaboration</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Open to research collaboration and internship opportunities in financial econometrics, 
-              network science, and quantitative finance. Feel free to reach out — sorayoung.42@outlook.com
-            </p>
-          </div>
+        <h2 className="font-display text-2xl font-bold text-white mb-6">Outside Research</h2>
+        <div className="max-w-2xl">
+          <p className="text-gray-400 text-base leading-relaxed">
+            When not doing research: craft beer, poker, hardcore punk and metalcore (current obsession: Fear and Loathing in Las Vegas), J-rock, and Japan — visits often, possibly moving to Tokyo.
+          </p>
         </div>
       </section>
     </div>
