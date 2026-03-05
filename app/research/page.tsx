@@ -51,100 +51,116 @@ export default function ResearchPage() {
       <MathRain />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 pb-24">
-        <div className="mb-12">
-          <h1 className="font-display text-3xl font-bold text-white mb-3">Research</h1>
-          <p className="text-gray-400 text-base max-w-2xl leading-relaxed">
-            I study the statistical limits of financial network recovery — specifically, when 
-            and why high-dimensional time series pipelines fail to recover meaningful structure.
-          </p>
-        </div>
+        {/* Ongoing Research Section */}
+        <section className="mb-16">
+          <h2 className="font-display text-2xl font-bold text-white mb-6">Ongoing Research</h2>
+          <div className="p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm">
+            <ul className="space-y-2.5">
+              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>Financial network recovery under high-dimensional VAR: sample complexity, minimax rates, practical estimation</span>
+              </li>
+              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>Information-theoretic limits of Granger/transfer entropy graph recovery</span>
+              </li>
+              <li className="text-gray-400 text-sm leading-relaxed flex gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>Exploring applications to systemic risk and complex financial systems</span>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-        <div className="space-y-6">
-          {papers.map((paper, idx) => (
-            <div
-              key={idx}
-              className="p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-white/16 transition-all duration-200"
-            >
-              <h2 className="text-white font-semibold text-lg leading-snug mb-2">
-                {paper.title}
-              </h2>
-              
-              <p className="text-sm text-gray-400 mb-1">
-                {paper.authors.map((author, i) => (
-                  <span key={i}>
-                    {author.url ? (
-                      <a 
-                        href={author.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-teal-400 hover:text-teal-300 transition-colors"
-                      >
-                        {author.name}
-                      </a>
-                    ) : (
-                      <span>{author.name}</span>
-                    )}
-                    {i < paper.authors.length - 1 && ", "}
-                  </span>
-                ))}
-              </p>
-              
-              <p className="text-xs text-gray-500 mb-4">{paper.venue}</p>
-
+        {/* Papers Section */}
+        <section>
+          <h2 className="font-display text-2xl font-bold text-white mb-6">Papers</h2>
+          <div className="space-y-6">
+            {papers.map((paper, idx) => (
               <button
+                key={idx}
                 onClick={() => togglePaper(idx)}
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-teal-400 border border-teal-500/40 rounded hover:bg-teal-500/10 transition-colors"
+                className="w-full text-left p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-white/16 transition-all duration-200"
               >
-                {expandedPaper === idx ? (
-                  <>
-                    Collapse <ChevronUp className="w-4 h-4" />
-                  </>
-                ) : (
-                  <>
-                    Read more <ChevronDown className="w-4 h-4" />
-                  </>
-                )}
-              </button>
+                <h3 className="text-white font-semibold text-lg leading-snug mb-2">
+                  {paper.title}
+                </h3>
+                
+                <p className="text-sm text-gray-400 mb-1">
+                  {paper.authors.map((author, i) => (
+                    <span key={i}>
+                      {author.url ? (
+                        <a 
+                          href={author.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-teal-400 hover:text-teal-300 transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {author.name}
+                        </a>
+                      ) : (
+                        <span>{author.name}</span>
+                      )}
+                      {i < paper.authors.length - 1 && ", "}
+                    </span>
+                  ))}
+                </p>
+                
+                <p className="text-xs text-gray-500 mb-4">{paper.venue}</p>
 
-              {expandedPaper === idx && (
-                <div className="mt-6 pt-6 border-t border-white/8 space-y-4">
-                  <div>
-                    <h3 className="text-white font-medium text-sm mb-2">Abstract</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {paper.abstract}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="text-white font-medium text-sm mb-2">Key Findings</h3>
-                    <ul className="space-y-1.5">
-                      {paper.keyFindings.map((finding, i) => (
-                        <li key={i} className="text-gray-400 text-sm leading-relaxed flex gap-2">
-                          <span className="text-teal-500 mt-1">•</span>
-                          <span>{finding}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {paper.ssrnLink && (
-                    <div className="pt-2">
-                      <a
-                        href={paper.ssrnLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-teal-500 text-black rounded hover:bg-teal-400 transition-colors"
-                      >
-                        View on SSRN
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
+                <div className="inline-flex items-center gap-2 text-sm font-medium text-teal-400">
+                  {expandedPaper === idx ? (
+                    <>
+                      Collapse <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      Read more <ChevronDown className="w-4 h-4" />
+                    </>
                   )}
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
+
+                {expandedPaper === idx && (
+                  <div className="mt-6 pt-6 border-t border-white/8 space-y-4" onClick={(e) => e.stopPropagation()}>
+                    <div>
+                      <h4 className="text-white font-medium text-sm mb-2">Abstract</h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {paper.abstract}
+                      </p>
+                    </div>
+
+                    <div>
+                      <h4 className="text-white font-medium text-sm mb-2">Key Findings</h4>
+                      <ul className="space-y-1.5">
+                        {paper.keyFindings.map((finding, i) => (
+                          <li key={i} className="text-gray-400 text-sm leading-relaxed flex gap-2">
+                            <span className="text-teal-500 mt-1">•</span>
+                            <span>{finding}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {paper.ssrnLink && (
+                      <div className="pt-2">
+                        <a
+                          href={paper.ssrnLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-teal-500 text-black rounded hover:bg-teal-400 transition-colors"
+                        >
+                          View on SSRN
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </button>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
