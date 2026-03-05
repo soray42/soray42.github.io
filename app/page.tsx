@@ -117,19 +117,12 @@ export default function Home() {
 
           {/* RIGHT COLUMN — large photo, aligned to top */}
           <div className="flex justify-center md:justify-end md:pt-8">
-            <div className="w-56 h-56 md:w-64 md:h-64 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center overflow-hidden">
-              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <rect width="200" height="200" fill="#111"/>
-                {/* body */}
-                <ellipse cx="100" cy="155" rx="52" ry="38" fill="#1a1a1a"/>
-                {/* head */}
-                <circle cx="100" cy="82" r="34" fill="#1a1a1a"/>
-                {/* teal ring */}
-                <circle cx="100" cy="82" r="34" fill="none" stroke="#14B8A6" strokeWidth="1.5" strokeOpacity="0.4"/>
-                {/* initials */}
-                <text x="100" y="90" textAnchor="middle" fontFamily="serif" fontSize="22" fill="#14B8A6" opacity="0.7">HY</text>
-              </svg>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/photo.jpg"
+              alt="Haotian Yang"
+              className="w-56 h-56 md:w-64 md:h-64 rounded-2xl object-cover object-top border border-white/10"
+            />
           </div>
         </div>
       </section>
