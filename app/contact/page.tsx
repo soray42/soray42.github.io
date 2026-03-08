@@ -13,6 +13,21 @@ export default function ContactPage() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <a
+            href="https://scholar.google.com/citations?user=PlSIkoAAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-3 p-4 border border-white/8 rounded-lg bg-black/30 hover:border-white/20 hover:bg-black/50 transition-all duration-200"
+          >
+            <svg className="w-5 h-5 text-gray-500 group-hover:text-teal-400 transition-colors" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+            </svg>
+            <div>
+              <p className="text-white text-sm font-medium">Google Scholar</p>
+              <p className="text-gray-600 text-xs">Publications</p>
+            </div>
+          </a>
+
+          <a
             href="https://github.com/soray42"
             target="_blank"
             rel="noopener noreferrer"

@@ -91,6 +91,15 @@ export default function Home() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
+                href="https://scholar.google.com/citations?user=PlSIkoAAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-gray-300 text-sm font-medium rounded hover:border-white/40 hover:text-white transition-colors"
+              >
+                Google Scholar
+                <ExternalLink className="w-3.5 h-3.5" />
+              </Link>
+              <Link
                 href="https://www.linkedin.com/in/haotian-yang-b7a47b301/"
                 target="_blank"
                 rel="noopener noreferrer"

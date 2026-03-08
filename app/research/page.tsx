@@ -53,6 +53,20 @@ export default function ResearchPage() {
       <MathRain />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 pb-24">
+        {/* Header with Google Scholar link */}
+        <div className="mb-12">
+          <h1 className="font-display text-3xl font-bold text-white mb-4">Research</h1>
+          <a
+            href="https://scholar.google.com/citations?user=PlSIkoAAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-gray-300 text-sm font-medium rounded hover:border-white/40 hover:text-white transition-colors"
+          >
+            Google Scholar Profile
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        </div>
+
         {/* Ongoing Research Section */}
         <section className="mb-16">
           <h2 className="font-display text-2xl font-bold text-white mb-6">Ongoing Research</h2>
