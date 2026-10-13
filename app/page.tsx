@@ -1,264 +1,150 @@
-'use client';
-
-import { useState } from 'react';
-import Link from 'next/link';
-import { ArrowRight, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
-import MathRain from '@/components/MathRain';
-
-const researchInterests = [
-  'Financial networks & transfer entropy',
-  'High-dimensional time series',
-  'Information-theoretic limits',
-  'Complex systems & network science',
-  'Quantitative finance / HF',
-];
-
-const papers = [
-  {
-    title: "Do Financial Transfer Entropy Networks Recover Meaningful Structure? A Matched-DGP Audit of Node-Level Estimation Reliability",
-    authors: [
-      { name: "Haotian Yang", url: null },
-      { name: "Yifeng Li", url: "https://yifen9.li/" }
-    ],
-    venue: "SSRN Working Paper, 2026",
-    badge: "🎤 EcoSta 2026 · Oral",
-    abstract: "We conduct a matched data-generating process (DGP) audit to evaluate whether estimated transfer entropy networks reliably recover meaningful node-level structure in financial systems. Using simulated data with known ground truth across a range of T/N ratios, we assess precision, recall, and F1 of node-level metrics under VAR+Gaussian, VAR+GARCH, and VAR+GARCH+Factor DGPs with OLS, Raw LASSO, and Factor-Neutral LASSO estimators. Our central finding is that the T/N ratio dominates preprocessing choice: at realistic T/N ratios (T/N < 5), OLS node-level precision reaches only 11%, Raw LASSO achieves 72.3%, and Factor-Neutral LASSO shows no significant improvement (66.7%). These results have direct implications for applied researchers building financial networks from returns data.",
-    keyFindings: [
-      "T/N ratio is the dominant determinant of network recovery quality",
-      "OLS precision: ~11% at T/N < 5; Raw LASSO: 72.3%",
-      "Factor-neutral preprocessing does not significantly improve node-level precision",
-      "Results hold across VAR+Gaussian, VAR+GARCH, and VAR+GARCH+Factor DGPs"
-    ],
-    ssrnLink: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6282818"
-  },
-  {
-    title: "When Can We Recover Granger/Transfer-Entropy Networks in High Dimensions? Information-Theoretic Limits and Achievable Regimes for VAR Graph Recovery",
-    authors: [
-      { name: "LI Yifeng", url: "https://yifen9.li/" },
-      { name: "YANG Haotian", url: null }
-    ],
-    venue: "Working Paper, 2026",
-    badge: "🎤 EcoSta 2026 · Oral",
-    abstract: "We study when directed dependence networks based on linear Granger causality (and hence Gaussian transfer entropy) can be reliably recovered in high dimensions. We derive information-theoretic lower bounds showing that node-level recovery is impossible below a sample-size regime determined by sparsity, signal strength, and dimension. We also provide achievability guarantees for row-wise sparse VAR estimation via penalized regression. Our results yield practical sample-size planning rules and clarify why empirically popular network pipelines fail at realistic T/N ratios.",
-    keyFindings: [
-      "Information-theoretic lower bounds on the minimum T/N for reliable graph recovery",
-      "Achievability guarantees for penalized row-wise sparse VAR estimation",
-      "Explicit dependence on sparsity s, signal strength, and dimension p",
-      "Explains empirically observed failure modes in financial network pipelines"
-    ],
-    ssrnLink: null
-  }
-];
+const sealPath =
+  "M833 724Q838 729 847.0 739.0Q856 749 862 749Q868 749 888.5 731.0Q909 713 926.5 692.5Q944 672 944 665Q938 659 930.0 657.0Q922 655 906 654Q880 625 837.0 590.5Q794 556 757 535L747 542Q778 594 810 670H643V465Q643 454 649.0 451.5Q655 449 678 449H762Q826 449 838 450Q846 450 850.0 452.0Q854 454 858 461Q866 475 884 545L890 567H901L904 458Q921 452 927.0 444.5Q933 437 933 425Q933 406 918.5 396.0Q904 386 866.0 381.0Q828 376 755 376H660Q620 376 600.0 382.5Q580 389 572.5 404.5Q565 420 565 450V670H455Q440 570 397.5 500.5Q355 431 278.5 385.0Q202 339 84 312L80 326Q219 380 284.0 460.5Q349 541 364 670H201Q203 620 188.5 582.5Q174 545 152 527Q133 511 109 511Q84 511 74 531Q71 539 71 547Q71 574 100 594Q130 616 150.5 663.5Q171 711 168 764L183 765Q194 733 199 699H461Q461 787 452 848Q514 832 539.0 821.5Q564 811 564 804Q564 800 556 795L540 785V699H811ZM756 304Q760 309 766.5 318.5Q773 328 777.5 332.5Q782 337 786 337Q792 337 813.5 320.0Q835 303 854.0 283.5Q873 264 873 257Q870 242 848 242H540V-10H798L821 24Q825 29 831.5 39.0Q838 49 842.5 54.0Q847 59 851 59Q857 59 879.5 41.0Q902 23 922.0 3.0Q942 -17 942 -24Q938 -40 917 -40H232Q161 -41 82 -54L56 -2Q111 -8 189 -10H461V242H318Q247 241 168 228L143 279Q198 273 276 271H733Z";
 
 export default function Home() {
-  const [expandedPaper, setExpandedPaper] = useState<number | null>(null);
-
-  const togglePaper = (index: number) => {
-    setExpandedPaper(expandedPaper === index ? null : index);
-  };
-
   return (
-    <div className="min-h-screen bg-[#0A0A0A]">
-      <MathRain />
-
-      {/* ── HERO: Inverted-L layout ───────────────────────────────────────
-          Top row: name (left, compact) + photo (right, large)
-          Below left: bio text fills the space under the name
-      ──────────────────────────────────────────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_280px] gap-8 md:gap-12">
-
-          {/* LEFT COLUMN */}
-          <div>
-            {/* Name block — compact, upper-left */}
-            <p className="font-mono text-xs text-teal-500 tracking-widest mb-3 uppercase">
-              Undergraduate Researcher
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-1 leading-tight">
-              Haotian Yang
-            </h1>
-            <p className="font-mono text-sm text-teal-400 mb-6">
-              preferred: Sora
-            </p>
-
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-3 mb-10">
-              <Link
-                href="/research/"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-black text-sm font-semibold rounded hover:bg-teal-400 transition-colors"
-              >
-                Research
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="https://scholar.google.com/citations?user=PlSIkoAAAAAJ&hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-gray-300 text-sm font-medium rounded hover:border-white/40 hover:text-white transition-colors"
-              >
-                Google Scholar
-                <ExternalLink className="w-3.5 h-3.5" />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/haotian-yang-b7a47b301/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 border border-white/20 text-gray-300 text-sm font-medium rounded hover:border-white/40 hover:text-white transition-colors"
-              >
-                LinkedIn
-                <ExternalLink className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-
-            {/* Bio — sits in the bottom-left of the inverted-L */}
-            <div className="space-y-4 text-[15px] leading-relaxed text-gray-400 max-w-xl">
-              <p>
-                Born in Harbin, China. Currently based in Milan — boring, but Bocconi&apos;s here and so is the work.
-              </p>
-              <p>
-                First-year undergraduate studying Economics Management and Computer Science (BEMACS) at Bocconi University. My research so far has focused on the statistical limits of financial network recovery: when T/N is small, even the best estimators fail, and T/N dominates almost everything else you might try.
-              </p>
-              <p>
-                Broadly interested in complex systems, network science, financial econometrics, and the math that connects them. Open to research internships in any of these areas, and aiming for a PhD in statistics or financial mathematics down the line.
-              </p>
-            </div>
-          </div>
-
-          {/* RIGHT COLUMN — large photo, aligned to top */}
-          <div className="flex justify-center md:justify-end md:pt-8">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/photo.jpg"
-              alt="Haotian Yang"
-              className="w-56 h-56 md:w-64 md:h-64 rounded-2xl object-cover object-top border border-white/10"
-            />
-          </div>
+    <article className="letter">
+      <header>
+        <div className="mast">
+          <h1>Haotian Yang (Sora)</h1>
+        <svg className="hanko" viewBox="0 0 100 100" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="95" height="95" fill="#8e2c24" />
+          <rect
+            x="8"
+            y="8"
+            width="84"
+            height="84"
+            fill="none"
+            stroke="#f6f1e8"
+            strokeWidth="0.7"
+          />
+          <g transform="translate(50 51.5) scale(0.07 -0.07) translate(-500 -397)">
+            <path d={sealPath} fill="#f6f1e8" />
+          </g>
+        </svg>
         </div>
-      </section>
-
-      {/* ── RESEARCH INTERESTS ─────────────────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-10">
-        <p className="font-mono text-xs text-teal-500 tracking-widest mb-3 uppercase">
-          Research Interests
+        <p className="place">Bocconi University, Milan</p>
+        <p className="contacts">
+          <a href="mailto:haotian.yang@studbocconi.it">haotian.yang@studbocconi.it</a>
+          <span className="sep" aria-hidden="true">
+            ·
+          </span>
+          <a href="tel:+393447679865">+39 344 767 9865</a>
+          <span className="sep" aria-hidden="true">
+            ·
+          </span>
+          <a href="https://huggingface.co/sora42y">huggingface.co/sora42y</a>
+          <span className="sep" aria-hidden="true">
+            ·
+          </span>
+          <a href="https://github.com/soray42">github.com/soray42</a>
+          <span className="sep" aria-hidden="true">
+            ·
+          </span>
+          <a href="/cv.pdf">CV</a>
         </p>
-        <div className="flex flex-wrap gap-2">
-          {researchInterests.map((interest) => (
-            <span
-              key={interest}
-              className="px-3 py-1 text-sm text-teal-400 bg-teal-500/8 border border-teal-500/25 rounded"
-            >
-              {interest}
-            </span>
-          ))}
-        </div>
-      </section>
+      </header>
 
-      {/* ── OPEN TO COLLABORATION ──────────────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-16">
-        <div className="border border-teal-500/25 bg-teal-500/5 rounded-lg p-5 max-w-2xl">
-          <p className="text-gray-300 text-[15px] leading-relaxed">
-            <strong className="text-white">Open to collaboration.</strong>{' '}
-            Working on something at the intersection of networks, statistics, and finance?
-            Especially interested in connecting with people working on financial network estimation,
-            prediction market microstructure, or market-making theory — feel free to reach out.
-          </p>
-        </div>
-      </section>
+      <p className="lede">
+        I work independently on LLM post-training, reinforcement learning, and
+        LLM behavior.
+      </p>
 
-      {/* ── PAPERS ─────────────────────────────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-16">
-        <h2 className="font-display text-2xl font-bold text-white mb-6">Papers</h2>
-        <div className="space-y-4">
-          {papers.map((paper, idx) => (
-            <button
-              key={idx}
-              onClick={() => togglePaper(idx)}
-              className="w-full text-left p-6 rounded-lg border border-white/8 bg-black/40 backdrop-blur-sm hover:border-teal-500/30 transition-all duration-200"
-            >
-              <div className="mb-3">
-                <span className="text-teal-400 bg-teal-500/10 border border-teal-500/30 text-xs px-2 py-0.5 rounded">
-                  {paper.badge}
-                </span>
-              </div>
-              <h3 className="text-white font-semibold text-base leading-snug mb-2">
-                {paper.title}
-              </h3>
-              <p className="text-sm text-gray-400 mb-1">
-                {paper.authors.map((author, i) => (
-                  <span key={i}>
-                    {author.url ? (
-                      <a
-                        href={author.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-teal-400 hover:text-teal-300 transition-colors"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {author.name}
-                      </a>
-                    ) : (
-                      <span>{author.name}</span>
-                    )}
-                    {i < paper.authors.length - 1 && ', '}
-                  </span>
-                ))}
-              </p>
-              <p className="text-xs text-gray-500 mb-3">{paper.venue}</p>
-              <div className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-400">
-                {expandedPaper === idx ? (
-                  <><ChevronUp className="w-4 h-4" /> Collapse</>
-                ) : (
-                  <><ChevronDown className="w-4 h-4" /> Read more</>
-                )}
-              </div>
-
-              {expandedPaper === idx && (
-                <div
-                  className="mt-5 pt-5 border-t border-white/8 space-y-4"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <div>
-                    <h4 className="text-white font-medium text-sm mb-2">Abstract</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{paper.abstract}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-white font-medium text-sm mb-2">Key Findings</h4>
-                    <ul className="space-y-1.5">
-                      {paper.keyFindings.map((f, i) => (
-                        <li key={i} className="text-gray-400 text-sm flex gap-2">
-                          <span className="text-teal-500 shrink-0">•</span>
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  {paper.ssrnLink && (
-                    <a
-                      href={paper.ssrnLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-teal-500 text-black rounded hover:bg-teal-400 transition-colors"
-                    >
-                      View on SSRN
-                      <ExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                </div>
-              )}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* ── OUTSIDE RESEARCH ───────────────────────────────────────────── */}
-      <section className="relative z-10 max-w-5xl mx-auto px-6 pb-28">
-        <h2 className="font-display text-2xl font-bold text-white mb-4">Outside Research</h2>
-        <p className="text-gray-400 text-base leading-relaxed max-w-2xl">
-          When not doing research: craft beer, poker, hardcore punk and metalcore
-          (current obsession: Fear and Loathing in Las Vegas), J-rock, and Japan —
-          visits often, possibly moving to Tokyo.
+      <section>
+        <h2>Education</h2>
+        <p>
+          Bocconi University, 2025–2028. B.Sc. in Economics, Management and
+          Computer Science (BEMACS), second year.
         </p>
       </section>
-    </div>
+
+      <section>
+        <h2>Publications</h2>
+        <p>
+          Yang, H. 2026. “<code>import pandas as np</code>: the numpy strikes
+          back.”{" "}
+          <em className="venue-strong">BlackboxNLP Workshop at EMNLP 2026</em>{" "}
+          (accepted; poster presentation, Budapest). Pretrained aliases beat
+          local bindings: with <code>import pandas as np</code>, 74% of
+          completions break vs. 12% under the conventional alias (9 models,
+          0.5B–8B).
+        </p>
+      </section>
+
+      <section>
+        <h2>Presentations</h2>
+        <p>
+          Yang, H., and Y. Li. 2026. “On the recovery of meaningful structure
+          from financial transfer entropy networks.” <em>EcoSta 2026</em>. Oral
+          presentation (presenting author).
+        </p>
+      </section>
+
+      <section>
+        <h2>Manuscripts Under Review</h2>
+        <p>
+          Yang, H. 2026. “Do You Copy? When Language Models Overwrite Observed
+          Values with Remembered Defaults.” Under review at <em>ICLR 2027</em>.
+          Shown a well-known service on a non-default port, agents write the
+          remembered default: +14.2 points when the value arrives as a tool
+          result, vs. +1.8 from a retrieved document.
+        </p>
+        <p>
+          Yang, H., D. Hovy, and G. Glavaš. 2026. “Seductive Details: Decoupling
+          Salience from Relevance in LLM Distractibility.” Short paper, under
+          review at <em>ACL Rolling Review</em> (October 2026 cycle). Making an
+          irrelevant cue more salient, with its claim held fixed, flips the
+          model&apos;s verdict on it in 18% of scenario–model pairs, in both
+          directions (4 models, 500 scenarios).
+        </p>
+      </section>
+
+      <section>
+        <h2>Open-Source Releases</h2>
+        <p>
+          <strong>Sev-2B-preview</strong> (Oct 2026). One forward pass, no
+          reasoning tokens: .486 on a Knights &amp; Knaves diagnostic vs. .236
+          for the best other 2B decision model; .704 on ProverQA.{" "}
+          <a href="https://huggingface.co/sora42y/Sev-2B-preview">Model</a>,{" "}
+          <a href="https://huggingface.co/datasets/sora42y/Sev-2B-data">
+            training data
+          </a>
+          , and training/evaluation code (Apache-2.0).
+        </p>
+        <p>
+          <strong>Seductive Details dataset</strong> (Oct 2026). Scenarios in 5
+          languages, model outputs, judge and human labels; one command
+          reproduces every number in the paper.
+        </p>
+      </section>
+
+      <section>
+        <h2>Leadership &amp; Activities</h2>
+        <p>
+          Black Swan Students Society, Jul 2026–present. Founding Member.
+          Conducting academic research in prediction markets.
+        </p>
+        <p>
+          Bocconi Students Blockchain Association, Sep 2025–Jul 2026. Market
+          Analyst.
+        </p>
+      </section>
+
+      <section>
+        <h2>Research Interests, Skills &amp; Languages</h2>
+        <p>
+          <em>Research interests:</em> LLM post-training and reasoning
+          distillation, LLM behavior and interpretability, information theory
+          and complex systems, AI in finance.
+        </p>
+        <p>
+          <em>Technical:</em> Julia, Python, LaTeX, Git, SLURM/HPC.
+        </p>
+        <p>
+          <em>Languages:</em> Mandarin (native), English (fluent), Japanese
+          (JLPT N3).
+        </p>
+      </section>
+    </article>
   );
 }

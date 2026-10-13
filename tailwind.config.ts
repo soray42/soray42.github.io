@@ -16,10 +16,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-lora)'],
-        display: ['var(--font-lora)'],
-        ui: ['var(--font-inter)'],
-        mono: ['var(--font-jetbrains-mono)'],
+        sans: ['Libre Caslon Text', 'Palatino', 'Palatino Linotype', 'serif'],
+        display: ['Libre Caslon Text', 'Palatino', 'Palatino Linotype', 'serif'],
       },
       backgroundColor: {
         'dark-bg': '#0A0A0A',
