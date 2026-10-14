@@ -1,32 +1,38 @@
 import type { Metadata } from "next";
-import { Inter, Lora, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const lora = Lora({ 
-  subsets: ["latin"],
-  variable: '--font-lora',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({ 
-  subsets: ["latin"],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
+const caslon = localFont({
+  src: [
+    {
+      path: "./fonts/LibreCaslonText-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/LibreCaslonText-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/LibreCaslonText-Italic.woff2",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/LibreCaslonText-BoldItalic.woff2",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  display: "swap",
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
-  title: "Haotian Yang",
-  description: "Undergraduate researcher at Bocconi University — BEMACS. Financial networks, transfer entropy, econometrics.",
-  keywords: ["financial networks", "transfer entropy", "econometrics", "Bocconi", "BEMACS"],
+  title: "Haotian Yang (Sora)",
+  description:
+    "Haotian Yang (Sora), second-year BEMACS undergraduate at Bocconi University. Independent research on LLM post-training, reinforcement learning, and language-model behavior.",
 };
 
 export default function RootLayout({
@@ -35,18 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${lora.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <div className="flex flex-col min-h-screen">
-            <Navbar />
-            <main className="flex-grow relative">
-              {children}
-            </main>
-            <Footer />
-          </div>
-        </ThemeProvider>
-      </body>
+    <html lang="en">
+      <body className={caslon.className}>{children}</body>
     </html>
   );
 }
