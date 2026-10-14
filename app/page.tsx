@@ -51,6 +51,7 @@ export default function Home() {
             </li>
           </ul>
           <nav className="toc" aria-label="Sections">
+            <a href="#abstract">Abstract</a>
             <a href="#news">News</a>
             <a href="#education">Education</a>
             <a href="#publications">Publications</a>
@@ -63,19 +64,22 @@ export default function Home() {
         </aside>
 
         <main>
-          <p className="intro">
-            I&apos;m Haotian Yang, a 2nd year bachelor at{" "}
-            <a href="https://www.unibocconi.it/">Bocconi University</a> in Milan.
-            I hate Milan so I&apos;m trying to escape as much as I can. I work
-            on LLMs, specifically on behavior, post-training and Agents.
-            Studying AI in a Finance school is definitely depressing so I
-            somehow grew a deep interest in Prediction Markets just to have
-            something to talk about with my classmates. Applying for PhD in
-            2028. Outside working I&apos;m a music enthusiast. I visit Japan a
-            lot just for loud rock shows. You can follow my X{" "}
-            <a href="https://x.com/Dontrustmebro">@dontrustmebro</a> for my
-            opinions and daily life.
-          </p>
+          <section id="abstract">
+            <h2>Abstract</h2>
+            <p className="intro">
+              I&apos;m Haotian Yang, a 2nd year bachelor at{" "}
+              <a href="https://www.unibocconi.it/">Bocconi University</a> in Milan.
+              I hate Milan so I&apos;m trying to escape as much as I can. I work
+              on LLMs, specifically on behavior, post-training and Agents.
+              Studying AI in a Finance school is definitely depressing so I
+              somehow grew a deep interest in Prediction Markets just to have
+              something to talk about with my classmates. Applying for PhD in
+              2028. Outside working I&apos;m a music enthusiast. I visit Japan a
+              lot just for loud rock shows. You can follow my X{" "}
+              <a href="https://x.com/Dontrustmebro">@dontrustmebro</a> for my
+              opinions and daily life.
+            </p>
+          </section>
           <NewsBox />
 
           <section id="education">
