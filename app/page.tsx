@@ -1,3 +1,5 @@
+import NewsBox from "./news-box";
+
 const sealPath =
   "M833 724Q838 729 847.0 739.0Q856 749 862 749Q868 749 888.5 731.0Q909 713 926.5 692.5Q944 672 944 665Q938 659 930.0 657.0Q922 655 906 654Q880 625 837.0 590.5Q794 556 757 535L747 542Q778 594 810 670H643V465Q643 454 649.0 451.5Q655 449 678 449H762Q826 449 838 450Q846 450 850.0 452.0Q854 454 858 461Q866 475 884 545L890 567H901L904 458Q921 452 927.0 444.5Q933 437 933 425Q933 406 918.5 396.0Q904 386 866.0 381.0Q828 376 755 376H660Q620 376 600.0 382.5Q580 389 572.5 404.5Q565 420 565 450V670H455Q440 570 397.5 500.5Q355 431 278.5 385.0Q202 339 84 312L80 326Q219 380 284.0 460.5Q349 541 364 670H201Q203 620 188.5 582.5Q174 545 152 527Q133 511 109 511Q84 511 74 531Q71 539 71 547Q71 574 100 594Q130 616 150.5 663.5Q171 711 168 764L183 765Q194 733 199 699H461Q461 787 452 848Q514 832 539.0 821.5Q564 811 564 804Q564 800 556 795L540 785V699H811ZM756 304Q760 309 766.5 318.5Q773 328 777.5 332.5Q782 337 786 337Q792 337 813.5 320.0Q835 303 854.0 283.5Q873 264 873 257Q870 242 848 242H540V-10H798L821 24Q825 29 831.5 39.0Q838 49 842.5 54.0Q847 59 851 59Q857 59 879.5 41.0Q902 23 922.0 3.0Q942 -17 942 -24Q938 -40 917 -40H232Q161 -41 82 -54L56 -2Q111 -8 189 -10H461V242H318Q247 241 168 228L143 279Q198 273 276 271H733Z";
 
@@ -36,13 +38,13 @@ export default function Home() {
               <a href="mailto:haotian.yang@studbocconi.it">haotian.yang@studbocconi.it</a>
             </li>
             <li>
-              <a href="tel:+393447679865">+39 344 767 9865</a>
-            </li>
-            <li>
               <a href="https://huggingface.co/sora42y">huggingface.co/sora42y</a>
             </li>
             <li>
               <a href="https://github.com/soray42">github.com/soray42</a>
+            </li>
+            <li>
+              <a href="https://x.com/Dontrustmebro">@Dontrustmebro</a>
             </li>
             <li>
               <a href="/cv.pdf">CV</a>
@@ -50,138 +52,31 @@ export default function Home() {
           </ul>
           <nav className="toc" aria-label="Sections">
             <a href="#news">News</a>
-            <a href="#research">Ongoing research</a>
             <a href="#education">Education</a>
             <a href="#publications">Publications</a>
             <a href="#presentations">Presentations</a>
             <a href="#review">Under review</a>
             <a href="#releases">Releases</a>
+            <a href="#interests">Interests</a>
+            <a href="#research">Ongoing research</a>
           </nav>
         </aside>
 
         <main>
-          <section id="news">
-            <h2>News</h2>
-            <ul className="news">
-              <li>
-                <span className="when">2026</span>
-                <span>
-                  “<code>import pandas as np</code>: the numpy strikes back”
-                  accepted at the BlackboxNLP Workshop at EMNLP 2026 (poster,
-                  Budapest).
-                </span>
-              </li>
-              <li>
-                <span className="when">2026</span>
-                <span>
-                  Oral presentation at EcoSta 2026, “On the recovery of
-                  meaningful structure from financial transfer entropy
-                  networks” (presenting author).
-                </span>
-              </li>
-              <li>
-                <span className="when">Oct 2026</span>
-                <span>Sev-2B-preview and the Seductive Details dataset released.</span>
-              </li>
-            </ul>
-          </section>
-
-          <section id="research">
-            <h2>Ongoing Research</h2>
-            <div className="strips">
-              <article className="strip">
-                <h3>
-                  <a href="https://github.com/soray42/Sev-2B">Tree Forcing</a>
-                </h3>
-                <p>
-                  One-forward-pass reasoning by supervising every yes/no node of
-                  a reasoning tree. Qwen 2B/4B students.
-                </p>
-              </article>
-              <article className="strip">
-                <h3>
-                  <a href="https://github.com/soray42/degrees-of-separation">
-                    Degrees of Separation
-                  </a>
-                </h3>
-                <p>
-                  Within a field, gap = 1 − Spearman(prestige, earnings).
-                </p>
-              </article>
-              <article className="strip">
-                <h3>Factorial Consistency</h3>
-                <p>
-                  Preregistered C7 counterfactual-teacher program, also called
-                  the gate program.
-                </p>
-              </article>
-              <article className="strip">
-                <h3>Failure attribution</h3>
-                <p>
-                  Applying Tree Forcing to failure attribution in LLM agents.
-                  Related work on locating the responsible step:{" "}
-                  <a href="https://arxiv.org/abs/2606.03467">StepFinder</a> and{" "}
-                  <a href="https://arxiv.org/abs/2610.11334">ReCast</a>.
-                </p>
-              </article>
-            </div>
-            <h3 className="strips-label">Prediction Markets</h3>
-            <div className="strips">
-              <article className="strip">
-                <h4>P1 — Do LLM Aggregator Agents Use Provenance?</h4>
-                <p>
-                  A paired audit of hierarchical multi-agent LLM pipelines: does
-                  the manager agent account for where analysts&apos; reports came
-                  from, e.g. several reports resting on the same news source?
-                </p>
-                <p className="status">Paper draft</p>
-              </article>
-              <article className="strip">
-                <h4>
-                  One Shock, Many Voices: Do LLM Managers Discount Correlated
-                  Analyst Reports?
-                </h4>
-                <p className="strip-venue">
-                  AI4F Workshop @ ICAIF ’26 (non-archival), Milan.
-                </p>
-                <p>
-                  An LLM manager trading on four analyst reports applies only
-                  about a third of the Bayes-correct discount for shared errors
-                  (0.21 vs 0.68 log-odds) even though 96% of its rationales
-                  mention the correlation; asking for the rationale before the
-                  probability raises it to 0.56.
-                </p>
-                <p className="status">Submitted (under review)</p>
-              </article>
-              <article className="strip">
-                <h4>
-                  When Should Financial Agents Trust the Market?
-                  Absorption-Aware Reliance on Prediction-Market Prices
-                </h4>
-                <p>
-                  An LLM agent&apos;s trust in a prediction-market price should
-                  be event-specific and time-varying, discounting prices right
-                  after announcements by how fast that market family usually
-                  absorbs news.
-                </p>
-                <p className="status">Proposal, collaboration planned</p>
-              </article>
-              <article className="strip">
-                <h4>
-                  Absorption Delays, Attention, and the Speed of Information
-                  Pricing in Macro Prediction Markets
-                </h4>
-                <p>
-                  Across 17 Kalshi contract families around ~50 scheduled macro
-                  announcements (2024–2026), measures how long related contracts
-                  take to absorb public news, and whether the slow tail is
-                  explained by liquidity and attention and leaves a drift
-                  profitable after costs.
-                </p>
-                <p className="status">Preregistered, data pipeline built</p>
-              </article>
-            </div>
-          </section>
+          <p className="intro">
+            I&apos;m Haotian Yang, a 2nd year bachelor at{" "}
+            <a href="https://www.unibocconi.it/">Bocconi University</a> in Milan.
+            I hate Milan so I&apos;m trying to escape as much as I can. I work
+            on LLMs, specifically on behavior, post-training and Agents.
+            Studying AI in a Finance school is definitely depressing so I
+            somehow grew a deep interest in Prediction Markets just to have
+            something to talk about with my classmates. Applying for PhD in
+            2028. Outside working I&apos;m a music enthusiast. I visit Japan a
+            lot just for loud rock shows. You can follow my X{" "}
+            <a href="https://x.com/Dontrustmebro">@dontrustmebro</a> for my
+            opinions and daily life.
+          </p>
+          <NewsBox />
 
           <section id="education">
             <h2>Education</h2>
@@ -315,33 +210,112 @@ export default function Home() {
             </article>
           </section>
 
-          <section id="activities">
-            <h2>Leadership &amp; Activities</h2>
+          <section id="interests">
+            <h2>Research Interests</h2>
             <p>
-              Black Swan Students Society, Jul 2026–present. Founding Member.
-              Conducting academic research in prediction markets.
-            </p>
-            <p>
-              Bocconi Students Blockchain Association, Sep 2025–Jul 2026. Market
-              Analyst.
+              LLM post-training and reasoning distillation, LLM behavior and
+              interpretability, information theory and complex systems, AI in
+              finance.
             </p>
           </section>
 
-          <section id="interests">
-            <h2>Research Interests, Skills &amp; Languages</h2>
-            <p>
-              <em>Research interests:</em> LLM post-training and reasoning
-              distillation, LLM behavior and interpretability, information theory
-              and complex systems, AI in finance.
-            </p>
-            <p>
-              <em>Technical:</em> Julia, Python, LaTeX, Git, SLURM/HPC.
-            </p>
-            <p>
-              <em>Languages:</em> Mandarin (native), English (fluent), Japanese
-              (JLPT N3).
-            </p>
+          <section id="research">
+            <h2>Ongoing Research</h2>
+            <div className="strips">
+              <article className="strip">
+                <h3>
+                  <a href="https://github.com/soray42/Sev-2B">Tree Forcing</a>
+                </h3>
+                <p>
+                  One-forward-pass reasoning by supervising every yes/no node of
+                  a reasoning tree. Qwen 2B/4B students.
+                </p>
+              </article>
+              <article className="strip">
+                <h3>
+                  <a href="https://github.com/soray42/degrees-of-separation">
+                    Degrees of Separation
+                  </a>
+                </h3>
+                <p>
+                  Within a field, gap = 1 − Spearman(prestige, earnings).
+                </p>
+              </article>
+              <article className="strip">
+                <h3>Factorial Consistency</h3>
+                <p>
+                  Preregistered C7 counterfactual-teacher program, also called
+                  the gate program.
+                </p>
+              </article>
+              <article className="strip">
+                <h3>Failure attribution</h3>
+                <p>
+                  Applying Tree Forcing to failure attribution in LLM agents.
+                  Related work on locating the responsible step:{" "}
+                  <a href="https://arxiv.org/abs/2606.03467">StepFinder</a> and{" "}
+                  <a href="https://arxiv.org/abs/2610.11334">ReCast</a>.
+                </p>
+              </article>
+            </div>
+            <h3 className="strips-label">Prediction Markets</h3>
+            <div className="strips">
+              <article className="strip">
+                <h4>P1 — Do LLM Aggregator Agents Use Provenance?</h4>
+                <p>
+                  A paired audit of hierarchical multi-agent LLM pipelines: does
+                  the manager agent account for where analysts&apos; reports came
+                  from, e.g. several reports resting on the same news source?
+                </p>
+                <p className="status">Paper draft</p>
+              </article>
+              <article className="strip">
+                <h4>
+                  One Shock, Many Voices: Do LLM Managers Discount Correlated
+                  Analyst Reports?
+                </h4>
+                <p className="strip-venue">
+                  AI4F Workshop @ ICAIF ’26 (non-archival), Milan.
+                </p>
+                <p>
+                  An LLM manager trading on four analyst reports applies only
+                  about a third of the Bayes-correct discount for shared errors
+                  (0.21 vs 0.68 log-odds) even though 96% of its rationales
+                  mention the correlation; asking for the rationale before the
+                  probability raises it to 0.56.
+                </p>
+                <p className="status">Submitted (under review)</p>
+              </article>
+              <article className="strip">
+                <h4>
+                  When Should Financial Agents Trust the Market?
+                  Absorption-Aware Reliance on Prediction-Market Prices
+                </h4>
+                <p>
+                  An LLM agent&apos;s trust in a prediction-market price should
+                  be event-specific and time-varying, discounting prices right
+                  after announcements by how fast that market family usually
+                  absorbs news.
+                </p>
+                <p className="status">Proposal, collaboration planned</p>
+              </article>
+              <article className="strip">
+                <h4>
+                  Absorption Delays, Attention, and the Speed of Information
+                  Pricing in Macro Prediction Markets
+                </h4>
+                <p>
+                  Across 17 Kalshi contract families around ~50 scheduled macro
+                  announcements (2024–2026), measures how long related contracts
+                  take to absorb public news, and whether the slow tail is
+                  explained by liquidity and attention and leaves a drift
+                  profitable after costs.
+                </p>
+                <p className="status">Preregistered, data pipeline built</p>
+              </article>
+            </div>
           </section>
+
         </main>
       </div>
     </div>
