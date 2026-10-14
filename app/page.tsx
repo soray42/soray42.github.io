@@ -4,10 +4,10 @@ const sealPath =
 function Hanko() {
   return (
     <svg className="hanko" viewBox="0 0 100 100" aria-hidden="true">
-      <rect x="2.5" y="2.5" width="95" height="95" fill="#8e2c24" />
-      <rect x="8" y="8" width="84" height="84" fill="none" stroke="#f6f1e8" strokeWidth="0.7" />
+      <rect x="2.5" y="2.5" width="95" height="95" fill="currentColor" />
+      <rect x="8" y="8" width="84" height="84" fill="none" stroke="var(--paper-base)" strokeWidth="0.7" />
       <g transform="translate(50 51.5) scale(0.07 -0.07) translate(-500 -397)">
-        <path d={sealPath} fill="#f6f1e8" />
+        <path d={sealPath} fill="var(--paper-base)" />
       </g>
     </svg>
   );
