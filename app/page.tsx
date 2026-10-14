@@ -125,6 +125,62 @@ export default function Home() {
                 </p>
               </article>
             </div>
+            <h3 className="strips-label">Prediction Markets</h3>
+            <div className="strips">
+              <article className="strip">
+                <h4>P1 — Do LLM Aggregator Agents Use Provenance?</h4>
+                <p>
+                  A paired audit of hierarchical multi-agent LLM pipelines: does
+                  the manager agent account for where analysts&apos; reports came
+                  from, e.g. several reports resting on the same news source?
+                </p>
+                <p className="status">Paper draft</p>
+              </article>
+              <article className="strip">
+                <h4>
+                  One Shock, Many Voices: Do LLM Managers Discount Correlated
+                  Analyst Reports?
+                </h4>
+                <p className="strip-venue">
+                  AI4F Workshop @ ICAIF ’26 (non-archival), Milan.
+                </p>
+                <p>
+                  An LLM manager trading on four analyst reports applies only
+                  about a third of the Bayes-correct discount for shared errors
+                  (0.21 vs 0.68 log-odds) even though 96% of its rationales
+                  mention the correlation; asking for the rationale before the
+                  probability raises it to 0.56.
+                </p>
+                <p className="status">Submitted (under review)</p>
+              </article>
+              <article className="strip">
+                <h4>
+                  When Should Financial Agents Trust the Market?
+                  Absorption-Aware Reliance on Prediction-Market Prices
+                </h4>
+                <p>
+                  An LLM agent&apos;s trust in a prediction-market price should
+                  be event-specific and time-varying, discounting prices right
+                  after announcements by how fast that market family usually
+                  absorbs news.
+                </p>
+                <p className="status">Proposal, collaboration planned</p>
+              </article>
+              <article className="strip">
+                <h4>
+                  Absorption Delays, Attention, and the Speed of Information
+                  Pricing in Macro Prediction Markets
+                </h4>
+                <p>
+                  Across 17 Kalshi contract families around ~50 scheduled macro
+                  announcements (2024–2026), measures how long related contracts
+                  take to absorb public news, and whether the slow tail is
+                  explained by liquidity and attention and leaves a drift
+                  profitable after costs.
+                </p>
+                <p className="status">Preregistered, data pipeline built</p>
+              </article>
+            </div>
           </section>
 
           <section id="education">

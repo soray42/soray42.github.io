@@ -287,6 +287,8 @@ main section + section {
 .strip {
   flex: 0 0 min(19rem, 86%);
   scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
   background: var(--surface-elevated);
   border-top: 1px solid var(--border-subtle);
   padding: 0.85rem 0.95rem 1rem;
@@ -297,8 +299,43 @@ main section + section {
   background: var(--surface-hover);
 }
 
-.strip h3 {
+.strip h3,
+.strip h4 {
   margin-bottom: 0.4rem;
+  font-size: 1.21rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  text-transform: none;
+  opacity: 1;
+}
+
+.strips-label {
+  margin: 1.45rem 0 0.7rem;
+  font-size: 0.89rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.strip p.strip-venue {
+  margin: 0 0 0.45rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.strip .status {
+  margin: auto 0 0;
+  padding-top: 0.85rem;
+  font-size: 0.89rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
 }
 
 .work {
