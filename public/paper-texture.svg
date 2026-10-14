@@ -2,18 +2,18 @@
   <defs>
     <filter id="washi" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
       <feFlood flood-color="#f4efe6" result="paper"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.0022 0.0031" numOctaves="4" seed="6" result="mottle"/>
-      <feDiffuseLighting in="mottle" surfaceScale="2.1" diffuseConstant="1.15" lighting-color="#f6f0e6" result="creases">
-        <feDistantLight azimuth="214" elevation="58"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.0042 0.0051" numOctaves="4" seed="6" result="mottle"/>
+      <feDiffuseLighting in="mottle" surfaceScale="1.35" diffuseConstant="1.04" lighting-color="#f7f2e8" result="creases">
+        <feDistantLight azimuth="214" elevation="66"/>
       </feDiffuseLighting>
-      <feTurbulence type="fractalNoise" baseFrequency="0.0007 0.06" numOctaves="2" seed="18" result="long"/>
-      <feColorMatrix in="long" type="matrix" result="fibers" values="0 0 0 0 0.55  0 0 0 0 0.46  0 0 0 0 0.34  0 0 0.34 0 -0.12"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.018 0.019" numOctaves="2" seed="18" result="long"/>
+      <feColorMatrix in="long" type="matrix" result="fibers" values="0 0 0 0 0.55  0 0 0 0 0.46  0 0 0 0 0.34  0 0 0.16 0 -0.05"/>
       <feBlend in="creases" in2="fibers" mode="multiply" result="woven"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.0009" numOctaves="2" seed="27" result="cross"/>
-      <feColorMatrix in="cross" type="matrix" result="crossInk" values="0 0 0 0 0.5  0 0 0 0 0.42  0 0 0 0 0.32  0 0 0.14 0 -0.05"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.021" numOctaves="2" seed="27" result="cross"/>
+      <feColorMatrix in="cross" type="matrix" result="crossInk" values="0 0 0 0 0.5  0 0 0 0 0.42  0 0 0 0 0.32  0 0 0.07 0 -0.02"/>
       <feBlend in="woven" in2="crossInk" mode="multiply" result="linen"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.028" numOctaves="2" seed="12" result="fine"/>
-      <feColorMatrix in="fine" type="matrix" result="grain" values="0 0 0 0 0.62  0 0 0 0 0.55  0 0 0 0 0.45  0.08 0 0 0 0"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.05 0.055" numOctaves="1" seed="12" result="fine"/>
+      <feColorMatrix in="fine" type="matrix" result="grain" values="0 0 0 0 0.62  0 0 0 0 0.55  0 0 0 0 0.45  0.06 0 0 0 0"/>
       <feBlend in="linen" in2="grain" mode="multiply" result="sheet"/>
       <feComposite in="sheet" in2="paper" operator="arithmetic" k1="0" k2="0.4" k3="0.6" k4="0"/>
     </filter>
