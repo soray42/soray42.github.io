@@ -1,6 +1,6 @@
 # Haotian Yang (Sora)
 
-Personal academic site. One reading column, set in Libre Caslon Text (the same family as the CV), deployed to GitHub Pages as a static export.
+Personal academic site. A profile column and a reading column, set in Libre Caslon Text (the same family as the CV), deployed to GitHub Pages as a static export.
 
 ## Develop
 
