@@ -67,15 +67,15 @@ export default function Home() {
           <section id="abstract">
             <h2>Abstract</h2>
             <p className="intro">
-              I&apos;m Haotian Yang, a 2nd year bachelor at{" "}
+              I&apos;m Haotian Yang, a second-year undergraduate at{" "}
               <a href="https://www.unibocconi.it/">Bocconi University</a> in Milan.
               I hate Milan so I&apos;m trying to escape as much as I can. I work
               on LLMs, specifically on behavior, post-training and Agents.
               Studying AI in a Finance school is definitely depressing so I
               somehow grew a deep interest in Prediction Markets just to have
-              something to talk about with my classmates. Applying for PhD in
-              2028. Outside working I&apos;m a music enthusiast. I visit Japan a
-              lot just for loud rock shows. You can follow my X{" "}
+              something to talk about with my classmates. I&apos;m applying for
+              PhD programs in 2028. Outside of work I&apos;m a music enthusiast.
+              I visit Japan a lot just for loud rock shows. You can follow my X{" "}
               <a href="https://x.com/Dontrustmebro">@dontrustmebro</a> for my
               opinions and daily life.
             </p>
