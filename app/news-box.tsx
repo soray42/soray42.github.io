@@ -53,6 +53,18 @@ export default function NewsBox() {
         <h2>News</h2>
         <ul className="news">
           <li>
+            <span className="when">Oct 2026</span>
+            <span>
+              “
+              <a href="https://openreview.net/forum?id=B1N5pkR9CJ">
+                One Shock, Many Voices: Do LLM Managers Discount Correlated
+                Analyst Reports?
+              </a>
+              ” will be presented at the AI4F Workshop at ICAIF ’26 (Bocconi,
+              Milan; non-archival).
+            </span>
+          </li>
+          <li>
             <span className="when">2026</span>
             <span>
               “<code>import pandas as np</code>: the numpy strikes back” accepted

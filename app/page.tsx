@@ -95,6 +95,28 @@ export default function Home() {
             <h2>Presentations</h2>
             <article className="work">
               <div className="plate" aria-hidden="true">
+                <span>ICAIF</span>
+                <span>2026</span>
+              </div>
+              <div>
+                <p className="badge">Workshop presentation, non-archival</p>
+                <p>
+                  Yang, H. 2026. “
+                  <a href="https://openreview.net/forum?id=B1N5pkR9CJ">
+                    One Shock, Many Voices: Do LLM Managers Discount Correlated
+                    Analyst Reports?
+                  </a>
+                  ” <em>AI4F Workshop at ICAIF ’26</em> (Bocconi, Milan,
+                  November 2026). Non-archival workshop presentation. An LLM
+                  manager applies only about a third of the Bayes-correct
+                  discount for correlated analyst reports (0.21 vs. 0.68
+                  log-odds), even though 96% of its rationales mention the
+                  correlation; asking for the rationale first raises it to 0.56.
+                </p>
+              </div>
+            </article>
+            <article className="work">
+              <div className="plate" aria-hidden="true">
                 <span>EcoSta</span>
                 <span>2026</span>
               </div>
@@ -247,22 +269,6 @@ export default function Home() {
                   A paired audit of hierarchical multi-agent LLM pipelines asks
                   whether the manager accounts for shared sources behind
                   analysts&apos; reports.
-                </p>
-                <p className="badge">Under review</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  One Shock, Many Voices: Do LLM Managers Discount Correlated
-                  Analyst Reports?
-                </h3>
-                <p>
-                  At the AI4F Workshop @ ICAIF ’26 (non-archival, Milan), an LLM
-                  manager applies only about a third of the Bayes-correct
-                  discount for shared errors (0.21 vs 0.68 log-odds) even though
-                  96% of its rationales mention the correlation, and asking for
-                  the rationale first raises it to 0.56.
                 </p>
                 <p className="badge">Under review</p>
               </div>
