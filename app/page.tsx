@@ -38,7 +38,6 @@ export default function Home() {
             <a href="#presentations">Presentations</a>
             <a href="#review">Under review</a>
             <a href="#releases">Releases</a>
-            <a href="#research">Ongoing research</a>
           </nav>
         </aside>
 
@@ -93,6 +92,28 @@ export default function Home() {
 
           <section id="presentations">
             <h2>Presentations</h2>
+            <article className="work">
+              <div className="plate" aria-hidden="true">
+                <span>ICAIF</span>
+                <span>2026</span>
+              </div>
+              <div>
+                <p className="badge">Workshop presentation, non-archival</p>
+                <p>
+                  Yang, H. 2026. “
+                  <a href="https://openreview.net/forum?id=B1N5pkR9CJ">
+                    One Shock, Many Voices: Do LLM Managers Discount Correlated
+                    Analyst Reports?
+                  </a>
+                  ” <em>AI4F Workshop at ICAIF ’26</em> (Bocconi, Milan,
+                  November 2026). Non-archival workshop presentation. An LLM
+                  manager applies only about a third of the Bayes-correct
+                  discount for correlated analyst reports (0.21 vs. 0.68
+                  log-odds), even though 96% of its rationales mention the
+                  correlation; asking for the rationale first raises it to 0.56.
+                </p>
+              </div>
+            </article>
             <article className="work">
               <div className="plate" aria-hidden="true">
                 <span>EcoSta</span>
@@ -189,113 +210,6 @@ export default function Home() {
                   (Oct 2026). Scenarios in 5 languages, model outputs, judge and
                   human labels; one command reproduces every number in the paper.
                 </p>
-              </div>
-            </article>
-          </section>
-
-          <section id="research">
-            <h2>Ongoing Research</h2>
-            <article className="work">
-              <div>
-                <h3>
-                  <a href="https://github.com/soray42/Sev-2B">Tree Forcing</a>
-                </h3>
-                <p>
-                  One-forward-pass reasoning by supervising every yes/no node of
-                  a reasoning tree, with Qwen 2B and 4B students.
-                </p>
-                <p className="badge">Ongoing</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  <a href="https://github.com/soray42/degrees-of-separation">
-                    Degrees of Separation
-                  </a>
-                </h3>
-                <p>Within a field, gap = 1 − Spearman(prestige, earnings).</p>
-                <p className="badge">Ongoing</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>Factorial Consistency</h3>
-                <p>
-                  A preregistered C7 counterfactual-teacher program, also called
-                  the gate program.
-                </p>
-                <p className="badge">Preregistered</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>Failure attribution</h3>
-                <p>
-                  Tree Forcing applied to failure attribution in LLM agents,
-                  with related work in{" "}
-                  <a href="https://arxiv.org/abs/2606.03467">StepFinder</a> and{" "}
-                  <a href="https://arxiv.org/abs/2610.11334">ReCast</a>.
-                </p>
-                <p className="badge">Ongoing</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>P1 — Do LLM Aggregator Agents Use Provenance?</h3>
-                <p>
-                  A paired audit of hierarchical multi-agent LLM pipelines asks
-                  whether the manager accounts for shared sources behind
-                  analysts&apos; reports.
-                </p>
-                <p className="badge">Under review</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  One Shock, Many Voices: Do LLM Managers Discount Correlated
-                  Analyst Reports?
-                </h3>
-                <p>
-                  At the AI4F Workshop @ ICAIF ’26 (non-archival, Milan), an LLM
-                  manager applies only about a third of the Bayes-correct
-                  discount for shared errors (0.21 vs 0.68 log-odds) even though
-                  96% of its rationales mention the correlation, and asking for
-                  the rationale first raises it to 0.56.
-                </p>
-                <p className="badge">Under review</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  When Should Financial Agents Trust the Market?
-                  Absorption-Aware Reliance on Prediction-Market Prices
-                </h3>
-                <p>
-                  An LLM agent&apos;s trust in a prediction-market price should
-                  be event-specific and time-varying, discounting prices right
-                  after announcements by how fast that market family usually
-                  absorbs news.
-                </p>
-                <p className="badge">Proposal, collaboration planned</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  Absorption Delays, Attention, and the Speed of Information
-                  Pricing in Macro Prediction Markets
-                </h3>
-                <p>
-                  Across 17 Kalshi contract families around ~50 scheduled macro
-                  announcements (2024–2026), this measures how long related
-                  contracts take to absorb public news, and whether the slow
-                  tail is explained by liquidity and attention and leaves a
-                  drift profitable after costs.
-                </p>
-                <p className="badge">Preregistered, data pipeline built</p>
               </div>
             </article>
           </section>
