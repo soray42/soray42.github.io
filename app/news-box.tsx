@@ -15,12 +15,21 @@ export default function NewsBox() {
     if (media.matches || el.scrollHeight <= el.clientHeight + 2) return;
 
     let dir = 1;
+    let offset = el.scrollTop;
     const tick = () => {
       const max = el.scrollHeight - el.clientHeight;
       if (!paused && max > 2) {
-        el.scrollTop += 0.28 * dir;
-        if (el.scrollTop >= max - 0.5) dir = -1;
-        if (el.scrollTop <= 0) dir = 1;
+        if (Math.abs(el.scrollTop - offset) > 1) offset = el.scrollTop;
+        offset += 0.28 * dir;
+        if (offset >= max - 0.5) {
+          offset = max;
+          dir = -1;
+        }
+        if (offset <= 0) {
+          offset = 0;
+          dir = 1;
+        }
+        el.scrollTop = offset;
       }
       frame = window.requestAnimationFrame(tick);
     };
@@ -53,35 +62,39 @@ export default function NewsBox() {
         <h2>News</h2>
         <ul className="news">
           <li>
-            <span className="when">Oct 2026</span>
+            <span className="when">Oct 17, 2026</span>
             <span>
               “
               <a href="https://openreview.net/forum?id=B1N5pkR9CJ">
                 One Shock, Many Voices: Do LLM Managers Discount Correlated
                 Analyst Reports?
               </a>
-              ” will be presented at the AI4F Workshop at ICAIF ’26 (Bocconi,
-              Milan; non-archival).
+              ” accepted to the AI4F Workshop at ICAIF ’26 (Bocconi, Milan;
+              non-archival presentation).
             </span>
           </li>
           <li>
-            <span className="when">2026</span>
+            <span className="when">Oct 3, 2026</span>
+            <span>
+              <a href="https://huggingface.co/sora42y/Sev-2B-preview">
+                Sev-2B-preview
+              </a>{" "}
+              released.
+            </span>
+          </li>
+          <li>
+            <span className="when">Sep 3, 2026</span>
             <span>
               “<code>import pandas as np</code>: the numpy strikes back” accepted
               at the BlackboxNLP Workshop at EMNLP 2026 (poster, Budapest).
             </span>
           </li>
           <li>
-            <span className="when">2026</span>
+            <span className="when">Aug 9, 2026</span>
             <span>
-              Oral presentation at EcoSta 2026, “On the recovery of meaningful
-              structure from financial transfer entropy networks” (presenting
-              author).
+              Presented “On the recovery of meaningful structure from financial
+              transfer entropy networks” at EcoSta 2026 (oral).
             </span>
-          </li>
-          <li>
-            <span className="when">Oct 2026</span>
-            <span>Sev-2B-preview and the Seductive Details dataset released.</span>
           </li>
         </ul>
       </div>

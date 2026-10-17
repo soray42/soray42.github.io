@@ -38,7 +38,6 @@ export default function Home() {
             <a href="#presentations">Presentations</a>
             <a href="#review">Under review</a>
             <a href="#releases">Releases</a>
-            <a href="#research">Ongoing research</a>
           </nav>
         </aside>
 
@@ -211,86 +210,6 @@ export default function Home() {
                   (Oct 2026). Scenarios in 5 languages, model outputs, judge and
                   human labels; one command reproduces every number in the paper.
                 </p>
-              </div>
-            </article>
-          </section>
-
-          <section id="research">
-            <h2>Ongoing Research</h2>
-            <article className="work">
-              <div>
-                <h3>
-                  <a href="https://github.com/soray42/Sev-2B">Tree Forcing</a>
-                </h3>
-                <p>
-                  One-forward-pass reasoning by supervising every yes/no node of
-                  a reasoning tree, with Qwen 2B and 4B students.
-                </p>
-                <p className="badge">Ongoing</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  <a href="https://github.com/soray42/degrees-of-separation">
-                    Degrees of Separation
-                  </a>
-                </h3>
-                <p>Within a field, gap = 1 − Spearman(prestige, earnings).</p>
-                <p className="badge">Ongoing</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>Factorial Consistency</h3>
-                <p>
-                  A preregistered C7 counterfactual-teacher program, also called
-                  the gate program.
-                </p>
-                <p className="badge">Preregistered</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>Failure attribution</h3>
-                <p>
-                  Tree Forcing applied to failure attribution in LLM agents,
-                  with related work in{" "}
-                  <a href="https://arxiv.org/abs/2606.03467">StepFinder</a> and{" "}
-                  <a href="https://arxiv.org/abs/2610.11334">ReCast</a>.
-                </p>
-                <p className="badge">Ongoing</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  When Should Financial Agents Trust the Market?
-                  Absorption-Aware Reliance on Prediction-Market Prices
-                </h3>
-                <p>
-                  An LLM agent&apos;s trust in a prediction-market price should
-                  be event-specific and time-varying, discounting prices right
-                  after announcements by how fast that market family usually
-                  absorbs news.
-                </p>
-                <p className="badge">Proposal, collaboration planned</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
-                <h3>
-                  Absorption Delays, Attention, and the Speed of Information
-                  Pricing in Macro Prediction Markets
-                </h3>
-                <p>
-                  Across 17 Kalshi contract families around ~50 scheduled macro
-                  announcements (2024–2026), this measures how long related
-                  contracts take to absorb public news, and whether the slow
-                  tail is explained by liquidity and attention and leaves a
-                  drift profitable after costs.
-                </p>
-                <p className="badge">Preregistered, data pipeline built</p>
               </div>
             </article>
           </section>
