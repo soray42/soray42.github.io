@@ -264,17 +264,6 @@ export default function Home() {
             </article>
             <article className="work">
               <div>
-                <h3>P1 — Do LLM Aggregator Agents Use Provenance?</h3>
-                <p>
-                  A paired audit of hierarchical multi-agent LLM pipelines asks
-                  whether the manager accounts for shared sources behind
-                  analysts&apos; reports.
-                </p>
-                <p className="badge">Under review</p>
-              </div>
-            </article>
-            <article className="work">
-              <div>
                 <h3>
                   When Should Financial Agents Trust the Market?
                   Absorption-Aware Reliance on Prediction-Market Prices
