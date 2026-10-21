@@ -106,11 +106,10 @@ export default function Home() {
                     Analyst Reports?
                   </a>
                   ” <em>AI4F Workshop at ICAIF ’26</em> (Bocconi, Milan,
-                  November 2026). Non-archival workshop presentation. An LLM
-                  manager applies only about a third of the Bayes-correct
-                  discount for correlated analyst reports (0.21 vs. 0.68
-                  log-odds), even though 96% of its rationales mention the
-                  correlation; asking for the rationale first raises it to 0.56.
+                  November 2026). Non-archival workshop presentation. Tests
+                  whether LLM trading managers correctly discount correlated
+                  analyst reports against an exact Bayesian benchmark;
+                  reasoning before answering triples the discount.
                 </p>
               </div>
             </article>
