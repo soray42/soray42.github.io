@@ -133,23 +133,6 @@ export default function Home() {
             <h2>Manuscripts Under Review</h2>
             <article className="work">
               <div className="plate" aria-hidden="true">
-                <span>ICLR</span>
-                <span>2027</span>
-              </div>
-              <div>
-                <p className="badge">Under review</p>
-                <p>
-                  Yang, H. 2026. “Do You Copy? When Language Models Overwrite
-                  Observed Values with Remembered Defaults.” Under review at{" "}
-                  <em>ICLR 2027</em>. Shown a well-known service on a non-default
-                  port, agents write the remembered default: +14.2 points when
-                  the value arrives as a tool result, vs. +1.8 from a retrieved
-                  document.
-                </p>
-              </div>
-            </article>
-            <article className="work">
-              <div className="plate" aria-hidden="true">
                 <span>ARR</span>
                 <span>2026</span>
               </div>
