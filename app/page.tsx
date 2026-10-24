@@ -1,13 +1,39 @@
 import NewsBox from "./news-box";
 
-const torch = {
-  title: "Torch",
-  artist: "Azami",
-  year: "2019",
-  href: "https://open.spotify.com/track/5M5wX0bEAi5fYae3wj3160",
-  cover: "/assets/torch-cover.jpg",
-  code: "/assets/torch-spotify-code.svg",
-};
+const obsessions = [
+  {
+    title: "Torch",
+    artist: "Azami",
+    year: "2019",
+    href: "https://open.spotify.com/track/5M5wX0bEAi5fYae3wj3160",
+    cover: "/assets/torch-cover.jpg",
+    code: "/assets/torch-spotify-code.svg",
+  },
+  {
+    title: "Good Night Darling",
+    artist: "SHANK",
+    year: "2012",
+    href: "https://open.spotify.com/track/4KRPj7zlugaGTpcY2KMalz",
+    cover: "/assets/good-night-darling-cover.jpg",
+    code: "/assets/good-night-darling-spotify-code.svg",
+  },
+  {
+    title: "Tales of Villain",
+    artist: "HANABIE.",
+    year: "2023",
+    href: "https://open.spotify.com/track/2xH6ORBecFLgT1HR0ezMtA",
+    cover: "/assets/tales-of-villain-cover.jpg",
+    code: "/assets/tales-of-villain-spotify-code.svg",
+  },
+  {
+    title: "SWEETSIDE SUICIDE",
+    artist: "ano",
+    year: "2021",
+    href: "https://open.spotify.com/track/4c08Q4306AWgcgY3FxKNgY",
+    cover: "/assets/sweetside-suicide-cover.jpg",
+    code: "/assets/sweetside-suicide-spotify-code.svg",
+  },
+];
 
 export default function Home() {
   return (
@@ -210,35 +236,39 @@ export default function Home() {
             <h2>Outside academics</h2>
             <p>In Tokyo, Dec 23 – Jan 2.</p>
             <h3 className="subhead">Current obsessions</h3>
-            <a
-              className="obsession"
-              href={torch.href}
-              aria-label={`${torch.title} by ${torch.artist}, ${torch.year}, on Spotify`}
-            >
-              <span className="obsession-main">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  className="obsession-cover"
-                  src={torch.cover}
-                  width={640}
-                  height={640}
-                  alt=""
-                />
-                <span className="obsession-meta">
-                  <span className="obsession-title">{torch.title}</span>
-                  <span className="obsession-artist">{torch.artist}</span>
-                  <span className="obsession-year">{torch.year}</span>
-                </span>
-              </span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="obsession-code"
-                src={torch.code}
-                width={640}
-                height={160}
-                alt=""
-              />
-            </a>
+            <ul className="obsession-row">
+              {obsessions.map((item) => (
+                <li key={item.href}>
+                  <a
+                    className="obsession"
+                    href={item.href}
+                    aria-label={`${item.title} by ${item.artist}, ${item.year}, on Spotify`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className="obsession-cover"
+                      src={item.cover}
+                      width={640}
+                      height={640}
+                      alt=""
+                    />
+                    <span className="obsession-meta">
+                      <span className="obsession-title">{item.title}</span>
+                      <span className="obsession-artist">{item.artist}</span>
+                      <span className="obsession-year">{item.year}</span>
+                    </span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className="obsession-code"
+                      src={item.code}
+                      width={640}
+                      height={160}
+                      alt=""
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
 
         </main>
