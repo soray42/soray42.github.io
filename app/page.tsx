@@ -1,5 +1,14 @@
 import NewsBox from "./news-box";
 
+const torch = {
+  title: "Torch",
+  artist: "Azami",
+  year: "2019",
+  href: "https://open.spotify.com/track/5M5wX0bEAi5fYae3wj3160",
+  cover: "/assets/torch-cover.jpg",
+  code: "/assets/torch-spotify-code.svg",
+};
+
 export default function Home() {
   return (
     <div className="letter">
@@ -38,6 +47,7 @@ export default function Home() {
             <a href="#presentations">Presentations</a>
             <a href="#review">Under review</a>
             <a href="#releases">Releases</a>
+            <a href="#outside">Outside academics</a>
           </nav>
         </aside>
 
@@ -194,6 +204,41 @@ export default function Home() {
                 </p>
               </div>
             </article>
+          </section>
+
+          <section id="outside">
+            <h2>Outside academics</h2>
+            <p>In Tokyo, Dec 23 – Jan 2.</p>
+            <h3 className="subhead">Current obsessions</h3>
+            <a
+              className="obsession"
+              href={torch.href}
+              aria-label={`${torch.title} by ${torch.artist}, ${torch.year}, on Spotify`}
+            >
+              <span className="obsession-main">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className="obsession-cover"
+                  src={torch.cover}
+                  width={640}
+                  height={640}
+                  alt=""
+                />
+                <span className="obsession-meta">
+                  <span className="obsession-title">{torch.title}</span>
+                  <span className="obsession-artist">{torch.artist}</span>
+                  <span className="obsession-year">{torch.year}</span>
+                </span>
+              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                className="obsession-code"
+                src={torch.code}
+                width={640}
+                height={160}
+                alt=""
+              />
+            </a>
           </section>
 
         </main>
