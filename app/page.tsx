@@ -114,13 +114,16 @@ export default function Home() {
               <div>
                 <p className="badge">Poster</p>
                 <p>
-                  Yang, H. 2026. “<code>import pandas as np</code>: the numpy
-                  strikes back.”{" "}
+                  Yang, H. 2026. “
+                  <a href="https://aclanthology.org/2026.blackboxnlp-1.1/">
+                    <code>import pandas as np</code>: the numpy strikes back.
+                  </a>
+                  ”{" "}
                   <em className="venue-strong">BlackboxNLP Workshop at EMNLP 2026</em>{" "}
-                  (accepted; poster presentation, Budapest). Pretrained aliases
-                  beat local bindings: with <code>import pandas as np</code>,
-                  74% of completions break vs. 12% under the conventional alias
-                  (9 models, 0.5B–8B).
+                  (accepted; poster presentation). Pretrained aliases beat local
+                  bindings: with <code>import pandas as np</code>, 74% of
+                  completions break vs. 12% under the conventional alias (9
+                  models, 0.5B–8B).
                 </p>
               </div>
             </article>
@@ -141,8 +144,8 @@ export default function Home() {
                     One Shock, Many Voices: Do LLM Managers Discount Correlated
                     Analyst Reports?
                   </a>
-                  ” <em>AI4F Workshop at ICAIF ’26</em> (Bocconi, Milan,
-                  November 2026). Non-archival workshop presentation. Tests
+                  ” <em>AI4F Workshop at ICAIF ’26</em> (November 2026).
+                  Non-archival workshop presentation. Tests
                   whether LLM trading managers correctly discount correlated
                   analyst reports against an exact Bayesian benchmark;
                   reasoning before answering triples the discount.
@@ -177,7 +180,7 @@ export default function Home() {
                 <p>
                   Yang, H., D. Hovy, and G. Glavaš. 2026. “Seductive Details:
                   Decoupling Salience from Relevance in LLM Distractibility.”
-                  Short paper, under review at <em>ACL Rolling Review</em>{" "}
+                  Under review at <em>ACL Rolling Review</em>{" "}
                   (October 2026 cycle). Making an irrelevant cue more salient,
                   with its claim held fixed, flips the model&apos;s verdict on
                   it in 18% of scenario–model pairs, in both directions (4
