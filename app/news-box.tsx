@@ -17,8 +17,8 @@ const news: NewsItem[] = [
           One Shock, Many Voices: Do LLM Managers Discount Correlated Analyst
           Reports?
         </a>
-        ” accepted to the AI4F Workshop at ICAIF ’26 (Bocconi, Milan;
-        non-archival presentation).
+        ” accepted to the AI4F Workshop at ICAIF ’26 (non-archival
+        presentation).
       </>
     ),
   },
@@ -35,8 +35,11 @@ const news: NewsItem[] = [
     date: "Sep 3, 2026",
     body: (
       <>
-        “<code>import pandas as np</code>: the numpy strikes back” accepted at
-        the BlackboxNLP Workshop at EMNLP 2026 (poster, Budapest).
+        “
+        <a href="https://aclanthology.org/2026.blackboxnlp-1.1/">
+          <code>import pandas as np</code>: the numpy strikes back
+        </a>
+        ” accepted at the BlackboxNLP Workshop at EMNLP 2026 (poster).
       </>
     ),
   },
