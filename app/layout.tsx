@@ -42,6 +42,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="500f1adf-f93d-4348-82b8-4256b5cf8801"
+        />
+      </head>
       <body className={caslon.className}>{children}</body>
     </html>
   );
