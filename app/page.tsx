@@ -1,4 +1,6 @@
+import Link from "next/link";
 import NewsBox from "./news-box";
+import { formatDate, getPosts } from "@/lib/blog";
 
 const obsessions = [
   {
@@ -36,6 +38,8 @@ const obsessions = [
 ];
 
 export default function Home() {
+  const latest = getPosts()[0];
+
   return (
     <div className="letter">
       <div className="shell">
@@ -65,6 +69,24 @@ export default function Home() {
               <a href="/cv.pdf">CV</a>
             </li>
           </ul>
+          <Link className="blog-card" href="/blog/">
+            <span className="blog-card-label">
+              Blog
+              <span className="blog-card-arrow" aria-hidden="true">
+                →
+              </span>
+            </span>
+            {latest ? (
+              <>
+                <span className="blog-card-title">{latest.title}</span>
+                <span className="blog-card-meta">
+                  Latest · {formatDate(latest.date)}
+                </span>
+              </>
+            ) : (
+              <span className="blog-card-title">Notes and longer writing</span>
+            )}
+          </Link>
           <nav className="toc" aria-label="Sections">
             <a href="#abstract">Abstract</a>
             <a href="#news">News</a>

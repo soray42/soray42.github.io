@@ -1,0 +1,34 @@
+---
+title: "Hello, blog"
+date: 2026-11-19
+summary: "A place for writing that is longer than a post on X and shorter than a paper."
+tags: [meta]
+---
+
+This is the first post. Papers go in the column on the front page; this is
+where the rest goes: half-finished ideas, notes from reading, and the
+occasional write-up of an experiment that did not make it into anything.
+
+## How posts are written
+
+Each post is one `.mdx` file in `content/blog/`. The front matter sets the
+title, date, and summary, and the body is Markdown.
+
+Inline math works, like $p(y \mid x) = \prod_t p(y_t \mid y_{<t}, x)$, and so
+do display equations:
+
+$$
+\mathcal{L}_{\text{DPO}} = -\log \sigma\!\left(\beta \log \frac{\pi_\theta(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \beta \log \frac{\pi_\theta(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)}\right)
+$$
+
+Code blocks are highlighted:
+
+```python
+import pandas as np
+
+df = np.DataFrame({"a": [1, 2, 3]})
+```
+
+> Quotes get a margin rule in the accent colour.
+
+More soon.
